@@ -1,3 +1,4 @@
+import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:flutter/material.dart';
 import 'utils/constants.dart';
 
@@ -62,32 +63,21 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: AppBar().preferredSize,
-        child: SafeArea(
-          child: Container(
-            color: Colors.red,
-            child: AppBar(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25.0),
-                      topRight: Radius.circular(25.0))),
-              elevation: 8,
-              backgroundColor: dSecondaryColor,
-              leading: Icon(
-                Icons.menu,
-                color: Colors.black,
-              ),
+      body: Column(
+        children: [
+          ClipPath(
+            clipper: BackgroundClipper(),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              decoration: const BoxDecoration(
+                  color: dSecondaryColor
             ),
-          ),
-        ),
-      ),
-      body: Container(
-        color: Colors.white,
+          ))
+        ],
       ),
     );
   }
