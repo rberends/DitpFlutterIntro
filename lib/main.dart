@@ -1,8 +1,11 @@
+import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:ditp_intro_flutter_slide/utils/my_scroll_behavior.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'utils/constants.dart';
 
 void main() {
@@ -58,26 +61,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _handleKeyEvent(RawKeyEvent event) {
     var offset = controller.offset;
-    if (event.logicalKey == LogicalKeyboardKey.arrowUp && event is RawKeyUpEvent ) {
+    if (event.logicalKey == LogicalKeyboardKey.arrowUp &&
+        event is RawKeyUpEvent) {
       setState(() {
         if (kReleaseMode) {
-          controller.animateToPage((controller.page! - 1) as int, duration: const Duration(milliseconds: 300), curve: Curves.ease);
+          controller.animateToPage((controller.page! - 1) as int,
+              duration: const Duration(milliseconds: 300), curve: Curves.ease);
         } else {
-          controller.animateToPage((controller.page! - 1) as int, duration: const Duration(milliseconds: 300), curve: Curves.ease);
+          controller.animateToPage((controller.page! - 1) as int,
+              duration: const Duration(milliseconds: 300), curve: Curves.ease);
         }
       });
-    }
-    else if (event.logicalKey == LogicalKeyboardKey.arrowDown && event is RawKeyUpEvent) {
+    } else if (event.logicalKey == LogicalKeyboardKey.arrowDown &&
+        event is RawKeyUpEvent) {
       setState(() {
         if (kReleaseMode) {
-          controller.animateToPage((controller.page! + 1) as int, duration: const Duration(milliseconds: 300), curve: Curves.ease);
+          controller.animateToPage((controller.page! + 1) as int,
+              duration: const Duration(milliseconds: 300), curve: Curves.ease);
         } else {
-          controller.animateToPage((controller.page! + 1) as int, duration: const Duration(milliseconds: 300), curve: Curves.ease);
+          controller.animateToPage((controller.page! + 1) as int,
+              duration: const Duration(milliseconds: 300), curve: Curves.ease);
         }
       });
     }
   }
-
 
   @override
   void dispose() {
@@ -87,47 +94,52 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    final FocusNode _focusNode = FocusNode();
+    final FocusNode focusNode = FocusNode();
 
     return Scaffold(
-      body: Column(
-        children: [
-          ClipPath(
-              clipper: BackgroundClipper(),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 80,
-                decoration: const BoxDecoration(color: dSecondaryColor),
-              )),   SizedBox(
-    height: 900.0,
-          child:  RawKeyboardListener(
-              autofocus: true,
-              onKey: _handleKeyEvent,
-              focusNode: _focusNode,
-              child: PageView(
-            /// [PageView.scrollDirection] defaults to [Axis.horizontal].
-            /// Use [Axis.vertical] to scroll vertically.
-            controller: controller,
-            scrollDirection: Axis.vertical,
-            scrollBehavior: MyCustomScrollBehavior(),
-            children: const <Widget>[
-              Center(
-                child: Text('First Page'),
-              ),
-              Center(
-                child: Text('Second Page'),
-              ),
-              Center(
-                child: Text('Third Page'),
-              ),
-            ],
-          )))
-        ],
-      )
-    );
-
+        body: Stack(
+      children: [
+        Expanded(
+            child: RawKeyboardListener(
+                autofocus: true,
+                onKey: _handleKeyEvent,
+                focusNode: focusNode,
+                child: PageView(
+                  /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+                  /// Use [Axis.vertical] to scroll vertically.
+                  controller: controller,
+                  scrollDirection: Axis.vertical,
+                  scrollBehavior: MyCustomScrollBehavior(),
+                  children: const <Widget>[
+                    Center(
+                      child: BaseSheet('First Page'),
+                    ),
+                    Center(
+                      child: BaseSheet('Second Page'),
+                    ),
+                    Center(
+                      child: BaseSheet('Third Page'),
+                    ),
+                  ],
+                ))),
+         Positioned(
+           top: 0,
+           child:ClipPath(
+            clipper: BackgroundClipper(),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              decoration: const BoxDecoration(color: dSecondaryColor),
+            )),)
+        , Positioned(
+          width: 50,
+          height:50, top: 14, left: 16,
+          child:
+           InkWell(
+             child: Image.asset('assets/ditp.png'),
+              onTap: () => launchUrlString('https://www.ditp.nl'))
+          ),
+      ],
+    ));
   }
-
-
 }
