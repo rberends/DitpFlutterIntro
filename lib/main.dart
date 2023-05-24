@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Ditp Flutter Introduction',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,6 +32,15 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        textTheme:     TextTheme(
+          displayLarge: TextStyle(color: dSecondaryColor, fontSize: 50, fontWeight: FontWeight.bold),
+    displayMedium: TextStyle(color: dSecondaryColor,fontSize: 20),
+          displaySmall: TextStyle(color: dSecondaryColor,fontSize: 20),
+
+          bodyMedium: TextStyle(color: dSecondaryColor, fontSize: 16),
+    titleMedium: TextStyle(color: dSecondaryColor, fontSize: 20),
+        ),
+        fontFamily: "Playfair"
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -100,6 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         body: Stack(
       children: [
+          Flex(
+          direction: Axis.vertical,
+          children: [
         Expanded(
             child: RawKeyboardListener(
                 autofocus: true,
@@ -113,8 +125,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   scrollBehavior: MyCustomScrollBehavior(),
                   children:  <Widget>[
                     Center(
-                      child: IntroductionSheet(),
-                    ),
+                      child: IntroductionSheet(onStart: () =>
+            {
+            controller.animateToPage((controller.page! + 1) as int,
+            duration: const Duration(milliseconds: 300), curve: Curves.ease)
+            }
+            )
+    ),
                     const Center(
                       child: BaseSheet('Second Page'),
                     ),
@@ -122,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: BaseSheet('Third Page'),
                     ),
                   ],
-                ))),
+                )))]),
          Positioned(
            top: 0,
            child:ClipPath(
