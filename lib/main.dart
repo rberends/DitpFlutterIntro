@@ -1,4 +1,5 @@
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
+import 'package:ditp_intro_flutter_slide/sheet/introduction_sheet.dart';
 import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:ditp_intro_flutter_slide/utils/my_scroll_behavior.dart';
 import 'package:flutter/foundation.dart';
@@ -110,14 +111,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   controller: controller,
                   scrollDirection: Axis.vertical,
                   scrollBehavior: MyCustomScrollBehavior(),
-                  children: const <Widget>[
+                  children:  <Widget>[
                     Center(
-                      child: BaseSheet('First Page'),
+                      child: IntroductionSheet(),
                     ),
-                    Center(
+                    const Center(
                       child: BaseSheet('Second Page'),
                     ),
-                    Center(
+                    const Center(
                       child: BaseSheet('Third Page'),
                     ),
                   ],
