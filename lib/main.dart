@@ -1,5 +1,6 @@
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/introduction_sheet.dart';
+import 'package:ditp_intro_flutter_slide/sheet/left_corner_sheet.dart';
 import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:ditp_intro_flutter_slide/utils/my_scroll_behavior.dart';
 import 'package:flutter/foundation.dart';
@@ -7,7 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'sheet/top_buttom_sheet.dart';
 import 'utils/constants.dart';
+import 'utils/strings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,26 +25,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Ditp Flutter Introduction',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        textTheme:     TextTheme(
-          displayLarge: TextStyle(color: dSecondaryColor, fontSize: 50, fontWeight: FontWeight.bold),
-    displayMedium: TextStyle(color: dSecondaryColor,fontSize: 20),
-          displaySmall: TextStyle(color: dSecondaryColor,fontSize: 20),
-
-          bodyMedium: TextStyle(color: dSecondaryColor, fontSize: 16),
-    titleMedium: TextStyle(color: dSecondaryColor, fontSize: 20),
-        ),
-        fontFamily: "Playfair"
-      ),
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          primarySwatch: Colors.blue,
+          textTheme: TextTheme(
+            displayLarge: TextStyle(
+                color: dSecondaryColor,
+                fontSize: 50,
+                fontWeight: FontWeight.bold),
+            displayMedium: TextStyle(color: dSecondaryColor, fontSize: 20),
+            displaySmall: TextStyle(color: dSecondaryColor, fontSize: 20),
+            bodyMedium: TextStyle(color: dSecondaryColor, fontSize: 16),
+            titleMedium: TextStyle(color: dSecondaryColor, fontSize: 20),
+          ),
+          fontFamily: "Playfair"),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -109,54 +113,57 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         body: Stack(
       children: [
-          Flex(
-          direction: Axis.vertical,
-          children: [
-        Expanded(
-            child: RawKeyboardListener(
-                autofocus: true,
-                onKey: _handleKeyEvent,
-                focusNode: focusNode,
-                child: PageView(
-                  /// [PageView.scrollDirection] defaults to [Axis.horizontal].
-                  /// Use [Axis.vertical] to scroll vertically.
-                  controller: controller,
-                  scrollDirection: Axis.vertical,
-                  scrollBehavior: MyCustomScrollBehavior(),
-                  children:  <Widget>[
-                    Center(
-                      child: IntroductionSheet(onStart: () =>
-            {
-            controller.animateToPage((controller.page! + 1) as int,
-            duration: const Duration(milliseconds: 300), curve: Curves.ease)
-            }
-            )
-    ),
-                    const Center(
-                      child: BaseSheet('Second Page'),
-                    ),
-                    const Center(
-                      child: BaseSheet('Third Page'),
-                    ),
-                  ],
-                )))]),
-         Positioned(
-           top: 0,
-           child:ClipPath(
-            clipper: BackgroundClipper(),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 80,
-              decoration: const BoxDecoration(color: dSecondaryColor),
-            )),)
-        , Positioned(
-          width: 50,
-          height:50, top: 14, left: 16,
-          child:
-           InkWell(
-             child: Image.asset('assets/ditp.png'),
-              onTap: () => launchUrlString('https://www.ditp.nl'))
-          ),
+        Flex(direction: Axis.vertical, children: [
+          Expanded(
+              child: RawKeyboardListener(
+                  autofocus: true,
+                  onKey: _handleKeyEvent,
+                  focusNode: focusNode,
+                  child: PageView(
+                    /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+                    /// Use [Axis.vertical] to scroll vertically.
+                    controller: controller,
+                    scrollDirection: Axis.vertical,
+                    scrollBehavior: MyCustomScrollBehavior(),
+                    children: <Widget>[
+                      Center(
+                          child: IntroductionSheet(
+                              onStart: () => {
+                                    controller.animateToPage(
+                                        (controller.page! + 1) as int,
+                                        duration:
+                                            const Duration(milliseconds: 300),
+                                        curve: Curves.ease)
+                                  })),
+                      const TopBottomSheet(Strings.secondTitle,
+                          Strings.secondDesc, "assets/second_bubbles.png"),
+                      const LeftCornerSheet(Strings.thirdTitle,
+                          Strings.thirdDesc, "assets/second_bubbles.png"),
+                      const TopBottomSheet(Strings.fourthTitle,
+                          Strings.fourthDesc, "assets/second_bubbles.png"),
+                      const LeftCornerSheet(Strings.fifthTitle,
+                          Strings.fitfhDesc, "assets/second_bubbles.png")
+                    ],
+                  )))
+        ]),
+        Positioned(
+          top: 0,
+          child: ClipPath(
+              clipper: BackgroundClipper(),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 80,
+                decoration: const BoxDecoration(color: dSecondaryColor),
+              )),
+        ),
+        Positioned(
+            width: 50,
+            height: 50,
+            top: 14,
+            left: 16,
+            child: InkWell(
+                child: Image.asset('assets/ditp.png'),
+                onTap: () => launchUrlString('https://www.ditp.nl'))),
       ],
     ));
   }

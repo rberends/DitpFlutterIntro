@@ -1,3 +1,4 @@
+import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -10,7 +11,9 @@ class IntroductionSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Container(
+        constraints: BoxConstraints( maxWidth: 1400),
+    child:Stack(
         children: [
       Positioned(
           top: 74,
@@ -29,16 +32,9 @@ class IntroductionSheet extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 child: Text(title,
                     style: Theme.of(context).textTheme.displaySmall)),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                child: Text("Flutter +\nDitp ==\nUseful?",
-                    style: Theme.of(context).textTheme.displayLarge)),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                child: Text(
-                    "A short look into the practicality of introducing yet another framework into our tech stack",
-                    style: Theme.of(context).textTheme.displayMedium)),
-            Padding(
+            MainTitleDescription("Flutter +\nDitp ==\nUseful?", "A short look into the practicality of introducing yet another framework into our tech stack",
+            )
+           ,Padding(
                 padding: const EdgeInsets.symmetric(vertical: 24),
                 child: Material(
                   //Wrap with Material
@@ -60,6 +56,6 @@ class IntroductionSheet extends StatelessWidget {
                   ),
                 ))
           ])),
-    ]);
+    ]));
   }
 }
