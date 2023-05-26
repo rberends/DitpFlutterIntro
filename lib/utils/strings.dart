@@ -14,6 +14,9 @@ class Strings {
   static const String fifthTitle = "Flutter is\nMultiplatform";
   static const String fitfhDesc = "With current six platforms supported, Flutter has become truly multiplatform.";
 
+  static const String fifthHalfTitle = "Flutter is\nFast & light";
+  static const String fifthHalfDesc = "Compared to competitors, Flutter is lighting fast and light-weight. It compiles to native code.";
+
   static const String sixthTitle = "Flutter is\nDart";
   static const String sixthDesc = "Written fully in Dart, flutter provides a single programming language to arrange everything.";
 

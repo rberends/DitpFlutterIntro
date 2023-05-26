@@ -1,6 +1,7 @@
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/introduction_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/left_corner_sheet.dart';
+import 'package:ditp_intro_flutter_slide/sheet/top_middle_sheet.dart';
 import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:ditp_intro_flutter_slide/utils/my_scroll_behavior.dart';
 import 'package:flutter/foundation.dart';
@@ -8,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import 'sheet/top_buttom_sheet.dart';
+import 'sheet/top_bottom_sheet.dart';
 import 'utils/constants.dart';
 import 'utils/strings.dart';
 
@@ -142,7 +143,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       const TopBottomSheet(Strings.fourthTitle,
                           Strings.fourthDesc, "assets/second_bubbles.png"),
                       const LeftCornerSheet(Strings.fifthTitle,
-                          Strings.fitfhDesc, "assets/second_bubbles.png")
+                          Strings.fitfhDesc, "assets/second_bubbles.png"),
+                      const LeftCornerSheet(Strings.fifthHalfTitle,
+                          Strings.fifthHalfDesc, "assets/second_bubbles.png"),
+                      const TopMiddleSheet(Strings.sixthTitle,
+                          Strings.sixthDesc, "assets/second_bubbles.png")
                     ],
                   )))
         ]),
