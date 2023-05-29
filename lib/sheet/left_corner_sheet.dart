@@ -1,8 +1,9 @@
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
+import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class LeftCornerSheet extends StatelessWidget {
+class LeftCornerSheet extends BaseSheet {
   const LeftCornerSheet(this.title, this.description,  this.imageAsset, {super.key} );
 
   final String title;
@@ -12,11 +13,11 @@ class LeftCornerSheet extends StatelessWidget {
   @override
   @override
   Widget build(BuildContext context) {
-    return   Padding( padding: EdgeInsets.symmetric(horizontal: 100),
-        child:Center(child: Container(
-        constraints: BoxConstraints( maxWidth: 1300),
-    child:Stack(
+    return   getDefaultPaddedContainer(Stack(
         children: [
+          Expanded(child:
+    Stack(
+    children: [
           Positioned(
               width: 700,
               height: 680,
@@ -26,7 +27,7 @@ class LeftCornerSheet extends StatelessWidget {
           Positioned(
               top: 90,
               left: 40,
-              child: Image.asset(imageAsset!=null? imageAsset!: "", width: 600, height: 800, fit: BoxFit.scaleDown,),),
+              child: Image.asset(imageAsset!=null? imageAsset!: "", width: 600, height: 800, fit: BoxFit.scaleDown,),)])),
           Positioned(
               width: 320,
               height: 500,
@@ -34,7 +35,7 @@ class LeftCornerSheet extends StatelessWidget {
               right: 40,
               child:
                 MainTitleDescription(title, description)
-              )
-        ]))));
+              ),
+        ]));
   }
 }

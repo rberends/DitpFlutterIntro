@@ -1,6 +1,7 @@
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/introduction_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/left_corner_sheet.dart';
+import 'package:ditp_intro_flutter_slide/sheet/left_right_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/top_middle_sheet.dart';
 import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:ditp_intro_flutter_slide/utils/my_scroll_behavior.dart';
@@ -147,7 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       const LeftCornerSheet(Strings.fifthHalfTitle,
                           Strings.fifthHalfDesc, "assets/second_bubbles.png"),
                       const TopMiddleSheet(Strings.sixthTitle,
-                          Strings.sixthDesc, "assets/second_bubbles.png")
+                          Strings.sixthDesc, "assets/second_bubbles.png"),
+                      const LeftRightSheet(Strings.ninthTitle,
+                          Strings.ninthDesc, "assets/ninth_image.png")
                     ],
                   )))
         ]),

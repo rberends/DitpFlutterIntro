@@ -23,11 +23,11 @@ class Strings {
   static const String seventhTitle = "Yes, Flutter is\nonly Dart";
   static const String seventhDesc = "There is no (s)css. No Typescript. No HTML No Javascript. There is only Dart.*";
 
-  static const String eighthTitle = "Flutter is\nWidgets";
-  static const String eighthDesc = "Everything in Flutter is a widget. A widget can be likened to the declarative part of a component in for example Angular.";
+  static const String ninthTitle = "Flutter is\nWidgets";
+  static const String ninthDesc = "Everything in Flutter is a widget. A widget can be likened to the declarative part of a component in for example Angular.";
 
-  static const String ninthTitle = "Flutter knows\ntwo Types";
-  static const String ninthDesc = "Widgets can have a state - StatefulWidget or be stateless - the StatelessWidget class.";
+  static const String sninthTitle = "Flutter knows\ntwo Types";
+  static const String sninthDesc = "Widgets can have a state - StatefulWidget or be stateless - the StatelessWidget class.";
 
   static const String tenthTitle = "Welcome To Flutter";
   static const String tenthDesc = "Welcome To Flutter";

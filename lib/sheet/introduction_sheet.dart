@@ -1,9 +1,10 @@
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
+import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class IntroductionSheet extends StatelessWidget {
+class IntroductionSheet extends BaseSheet {
   IntroductionSheet({super.key, required this.onStart});
 
   final Function onStart;
@@ -11,9 +12,8 @@ class IntroductionSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        constraints: BoxConstraints( maxWidth: 1400),
-    child:Stack(
+    return
+      getDefaultPaddedContainer(Stack(
         children: [
       Positioned(
           top: 74,
@@ -25,7 +25,6 @@ class IntroductionSheet extends StatelessWidget {
           width: 300,
           height: 500,
           top: 100,
-          left: 180,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Padding(

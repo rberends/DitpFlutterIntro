@@ -1,20 +1,17 @@
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class BaseSheet extends StatelessWidget {
-  const BaseSheet(this.title);
+abstract class BaseSheet extends StatelessWidget {
+  const BaseSheet({super.key});
 
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
+  getDefaultPaddedContainer(Widget child) {
     return Container(
-      height: 200,
-      width: 200,
-       color: dPrimaryColor,
-       child: Center(
-          child: Text(title)
-        )
-    );
+        child: Align(
+            alignment: Alignment.center,
+            widthFactor: 0.9,
+            child: Padding(
+                padding: EdgeInsetsDirectional.symmetric(
+                    horizontal: kHorizontalPaddding),
+                child: Container(child: child, constraints: BoxConstraints(maxWidth: 1400)),)));
   }
 }
