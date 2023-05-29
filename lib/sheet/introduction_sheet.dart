@@ -4,6 +4,8 @@ import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../utils/strings.dart';
+
 class IntroductionSheet extends BaseSheet {
   IntroductionSheet({super.key, required this.onStart});
 
@@ -31,8 +33,7 @@ class IntroductionSheet extends BaseSheet {
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 child: Text(title,
                     style: Theme.of(context).textTheme.displaySmall)),
-            MainTitleDescription("Flutter +\nDitp ==\nUseful?", "A short look into the practicality of introducing yet another framework into our tech stack",
-            )
+            MainTitleDescription(Strings.introTitle, Strings.introDesc)
            ,Padding(
                 padding: const EdgeInsets.symmetric(vertical: 24),
                 child: Material(
