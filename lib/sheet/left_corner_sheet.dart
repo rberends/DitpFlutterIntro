@@ -4,11 +4,12 @@ import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class LeftCornerSheet extends BaseSheet {
-  const LeftCornerSheet(this.title, this.description,  this.imageAsset, {super.key} );
+  const LeftCornerSheet(this.title, this.description,  this.imageAsset,  {this.bottomImageAsset = null});
 
   final String title;
   final String description;
   final String? imageAsset;
+  final String? bottomImageAsset;
 
   @override
   @override
@@ -27,7 +28,7 @@ class LeftCornerSheet extends BaseSheet {
           Positioned(
               top: 90,
               left: 40,
-              child: Image.asset(imageAsset!=null? imageAsset!: "", width: 600, height: 800, fit: BoxFit.scaleDown,),)])),
+              child: Image.asset(imageAsset!=null? imageAsset!: "", width: 500, height: 600,fit: BoxFit.contain,),)])),
           Positioned(
               width: 320,
               height: 500,
@@ -36,6 +37,15 @@ class LeftCornerSheet extends BaseSheet {
               child:
                 MainTitleDescription(title, description)
               ),
-        ]));
+          Positioned(
+            bottom: 10,
+            left: MediaQuery.of(context).size.width/18,
+            child: Container( child:bottomImageAsset != null? Image.asset(
+              bottomImageAsset != null ? bottomImageAsset! : "",
+              width: MediaQuery.of(context).size.width/3*2,
+              height: 300,
+              fit: BoxFit.scaleDown,
+            ):Container())),
+            ]));
   }
 }

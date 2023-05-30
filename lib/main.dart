@@ -138,9 +138,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                         curve: Curves.ease)
                                   })),
                       const TopBottomSheet(Strings.secondTitle,
-                          Strings.secondDesc, "assets/second_bubbles.png"),
+                          Strings.secondDesc, "assets/second_bubbles.png", bottomImageAsset: "assets/second_image.png"),
                       const LeftCornerSheet(Strings.thirdTitle,
-                          Strings.thirdDesc, "assets/second_bubbles.png"),
+                          Strings.thirdDesc, "assets/second_bubbles.png", bottomImageAsset: "assets/third_image.png"),
                       const TopBottomSheet(Strings.fourthTitle,
                           Strings.fourthDesc, "assets/second_bubbles.png"),
                       const LeftCornerSheet(Strings.fifthTitle,
