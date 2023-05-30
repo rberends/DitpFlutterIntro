@@ -160,14 +160,14 @@ class _MyHomePageState extends State<MyHomePage> {
               clipper: BackgroundClipper(),
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 80,
+                height: defaultTargetPlatform == TargetPlatform.android? 90 :80 ,
                 decoration: const BoxDecoration(color: dSecondaryColor),
               )),
         ),
         Positioned(
             width: 50,
             height: 50,
-            top: 14,
+            top: defaultTargetPlatform == TargetPlatform.android? 28 :14 ,
             left: 16,
             child: InkWell(
                 child: Image.asset('assets/ditp.png'),

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nl.ditp.flutter.intro.ditp_intro_flutter_slide">
    <application
-        android:label="ditp_intro_flutter_slide"
+        android:label="Flutter Introduction"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
