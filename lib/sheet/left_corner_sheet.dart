@@ -14,10 +14,9 @@ class LeftCornerSheet extends BaseSheet {
   @override
   @override
   Widget build(BuildContext context) {
-    return   getDefaultPaddedContainer(Stack(
-        children: [
-          Expanded(child:
+    return   getDefaultPaddedContainer(
     Stack(
+        fit: StackFit.expand,
     children: [
           Positioned(
               width: 700,
@@ -28,7 +27,7 @@ class LeftCornerSheet extends BaseSheet {
           Positioned(
               top: 90,
               left: 40,
-              child: Image.asset(imageAsset!=null? imageAsset!: "", width: 500, height: 600,fit: BoxFit.contain,),)])),
+              child: Image.asset(imageAsset!=null? imageAsset!: "", width: 500, height: 600,fit: BoxFit.contain,),),
           Positioned(
               width: 320,
               height: 500,

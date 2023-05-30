@@ -17,7 +17,8 @@ class LeftRightSheet extends BaseSheet {
   @override
   Widget build(BuildContext context) {
     return getDefaultPaddedContainer(
-         Stack(children: [
+         Stack(fit: StackFit.expand,
+             children: [
           Positioned(
               width: min((MediaQuery.of(context).size.width - 200) / 2+10,800),
               height: MediaQuery.of(context).size.height*0.8,
