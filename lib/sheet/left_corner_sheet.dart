@@ -22,7 +22,7 @@ class LeftCornerSheet extends BaseSheet {
     children: [
           Positioned(
               width: min(MediaQuery.of(context).size.width/2, 700),
-              height: 680,
+              height: 600,
               top: 90,
               left: 0,
               child: Container(color: dSecondaryColor)),
@@ -31,7 +31,7 @@ class LeftCornerSheet extends BaseSheet {
               left: 40,
               child:
               Image.asset(imageAsset!=null? imageAsset!: "",
-                width: min(MediaQuery.of(context).size.width/2-50,600), height: 600,fit: BoxFit.contain,),),
+                width: min(MediaQuery.of(context).size.width/2-50,550), height: 550,fit: BoxFit.contain,),),
           Positioned(
               width: 320,
               height: 500,

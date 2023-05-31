@@ -162,11 +162,21 @@ class _MyHomePageState extends State<MyHomePage> {
                           Strings.seventhDesc, "assets/second_bubbles.png",
                           bottomImageAsset: "assets/seventh_bottom_image.png"),
                       const MiddleLeftRightSheet(Strings.eightTitle,
-                          Strings.eightDesc, "assets/eigth_image.png",
+                          Strings.eightDesc, "assets/eighth_image.png",
                           leftImageAsset: "assets/eight_image_sub_left.png",
                           rightImageAsset: "assets/eight_image_sub_right.png"),
                       const LeftRightSheet(Strings.ninthTitle,
-                          Strings.ninthDesc, "assets/ninth_image.png")
+                          Strings.ninthDesc, "assets/ninth_image.png"),
+                      const LeftCornerSheet(Strings.eleventhTitle,
+                          Strings.eleventhDesc, "assets/second_bubbles.png",
+                          bottomImageAsset: "assets/eleventh_bottom_image.png"),
+                      const TopBottomSheet(Strings.twelfthTitle,
+                        Strings.twelfthDesc, "assets/twelth_secondary_image.png",
+                        bottomImageAsset: "assets/twelth_image.png", showLargeBottomImage: true,),
+                      //TODO - add twelth sheet. Needs new class.
+                      const TopBottomSheet(Strings.thirteenthTitle,
+                          Strings.thirteenthDesc, "assets/second_bubbles.png",
+                          bottomImageAsset: "assets/thirteenth_bottom_image.png", showLargeBottomImage: true,),
                     ],
                   )))
         ]),
