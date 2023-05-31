@@ -22,7 +22,7 @@ class Strings {
 
 
   static const String fourthTitle = "Flutter is\nAlive";
-  static const String fourthDesc = "A lot of companies are currently using Flutter to build their apps. More and more have decided to make Flutter their framework of choice for (primarily) mobile apps.";
+  static const String fourthDesc = "A lot of companies are currently using Flutter to build their apps. More and more have decided to make Flutter their framework of choice for (primarily) mobile apps.\n\nOne well-known example is the mobile Google Ads app, Ebay is yet another.";
 
   static const String fifthTitle = "Flutter is\nsupported";
   static const String fifthDesc = "Created by Google initially, Flutter has had multiple years of development done now and has become stable. Currently, over 15 companies are part of the FLutter development team";
@@ -31,7 +31,7 @@ class Strings {
   static const String sixthDesc = "Compared to competitors, Flutter is lighting fast and light-weight. It compiles to native code.";
 
   static const String seventhTitle = "Flutter is\nDart";
-  static const String seventhDesc = "Written fully in Dart, flutter provides a single programming language to arrange everything.";
+  static const String seventhDesc = "Written fully in Dart, flutter provides a single programming language to arrange everything. \n\nDart is a statically-typed, garbage-collected, sound nullsafety based programming language.";
 
   static const String eightTitle = "Yes, Flutter is\nonly Dart";
   static const String eightDesc = "There is no (s)css. No Typescript. No HTML No Javascript. There is only Dart.*";
@@ -45,7 +45,7 @@ class Strings {
   static const String eleventhTitle = "Flutter is \nMultiple IDEs";
   static const String eleventhDesc = "Currently four different IDEs are mentioned in the official documentation of Flutter";
 
-  static const String twelfthTitle = "Flutter doesHello World";
+  static const String twelfthTitle = "Flutter does\nHello World";
   static const String twelfthDesc = "Lets say hello!";
 
   static const String thirteenthTitle = "Flutter is Native";

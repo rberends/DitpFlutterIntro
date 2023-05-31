@@ -2,6 +2,7 @@ import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/introduction_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/left_corner_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/left_right_sheet.dart';
+import 'package:ditp_intro_flutter_slide/sheet/middle_left_right_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/top_middle_sheet.dart';
 import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:ditp_intro_flutter_slide/utils/my_scroll_behavior.dart';
@@ -15,7 +16,13 @@ import 'utils/constants.dart';
 import 'utils/strings.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft])
+      .then((_) {
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -37,7 +44,7 @@ class MyApp extends StatelessWidget {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
           primarySwatch: Colors.blue,
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             displayLarge: TextStyle(
                 color: dSecondaryColor,
                 fontSize: 50,
@@ -81,10 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
         event is RawKeyUpEvent) {
       setState(() {
         if (kReleaseMode) {
-          controller.animateToPage((controller.page! - 1) as int,
+          controller.animateToPage((controller.page! - 1).toInt(),
               duration: const Duration(milliseconds: 300), curve: Curves.ease);
         } else {
-          controller.animateToPage((controller.page! - 1) as int,
+          controller.animateToPage((controller.page! - 1).toInt(),
               duration: const Duration(milliseconds: 300), curve: Curves.ease);
         }
       });
@@ -92,10 +99,10 @@ class _MyHomePageState extends State<MyHomePage> {
         event is RawKeyUpEvent) {
       setState(() {
         if (kReleaseMode) {
-          controller.animateToPage((controller.page! + 1) as int,
+          controller.animateToPage((controller.page! + 1).toInt(),
               duration: const Duration(milliseconds: 300), curve: Curves.ease);
         } else {
-          controller.animateToPage((controller.page! + 1) as int,
+          controller.animateToPage((controller.page! + 1).toInt(),
               duration: const Duration(milliseconds: 300), curve: Curves.ease);
         }
       });
@@ -132,23 +139,32 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: IntroductionSheet(
                               onStart: () => {
                                     controller.animateToPage(
-                                        (controller.page! + 1) as int,
+                                        (controller.page! + 1).toInt(),
                                         duration:
                                             const Duration(milliseconds: 300),
                                         curve: Curves.ease)
                                   })),
                       const TopBottomSheet(Strings.secondTitle,
-                          Strings.secondDesc, "assets/second_bubbles.png", bottomImageAsset: "assets/second_image.png"),
+                          Strings.secondDesc, "assets/second_bubbles.png",
+                          bottomImageAsset: "assets/second_image.png"),
                       const LeftCornerSheet(Strings.thirdTitle,
-                          Strings.thirdDesc, "assets/second_bubbles.png", bottomImageAsset: "assets/third_image.png"),
-                      const LeftRightSheet(Strings.fourthTitle,
+                          Strings.thirdDesc, "assets/second_bubbles.png",
+                          bottomImageAsset: "assets/third_image.png"),
+                      const TopBottomSheet(Strings.fourthTitle,
                           Strings.fourthDesc, "assets/fourth_image.png"),
-                      const LeftCornerSheet(Strings.fifthTitle,
-                          Strings.fifthDesc, "assets/second_bubbles.png"),
-                      const TopMiddleSheet(Strings.sixthTitle,
-                          Strings.sixthDesc, "assets/second_bubbles.png"),
-                      const LeftCornerSheet(Strings.seventhTitle,
-                          Strings.seventhDesc, "assets/second_bubbles.png"),
+                      const TopBottomSheet(Strings.fifthTitle,
+                          Strings.fifthDesc, "assets/second_bubbles.png",
+                          bottomImageAsset: "assets/companies.png"),
+                      const LeftCornerSheet(Strings.sixthTitle,
+                          Strings.sixthDesc, "assets/second_bubbles.png",
+                          bottomImageAsset: "assets/light_apps.png"),
+                      const TopMiddleSheet(Strings.seventhTitle,
+                          Strings.seventhDesc, "assets/second_bubbles.png",
+                          bottomImageAsset: "assets/seventh_bottom_image.png"),
+                      const MiddleLeftRightSheet(Strings.eightTitle,
+                          Strings.eightDesc, "assets/eigth_image.png",
+                          leftImageAsset: "assets/eight_image_sub_left.png",
+                          rightImageAsset: "assets/eight_image_sub_right.png"),
                       const LeftRightSheet(Strings.ninthTitle,
                           Strings.ninthDesc, "assets/ninth_image.png")
                     ],
@@ -160,14 +176,15 @@ class _MyHomePageState extends State<MyHomePage> {
               clipper: BackgroundClipper(),
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: defaultTargetPlatform == TargetPlatform.android? 90 :80 ,
+                height:
+                    defaultTargetPlatform == TargetPlatform.android ? 90 : 80,
                 decoration: const BoxDecoration(color: dSecondaryColor),
               )),
         ),
         Positioned(
             width: 50,
             height: 50,
-            top: defaultTargetPlatform == TargetPlatform.android? 28 :14 ,
+            top: defaultTargetPlatform == TargetPlatform.android ? 28 : 14,
             left: 16,
             child: InkWell(
                 child: Image.asset('assets/ditp.png'),

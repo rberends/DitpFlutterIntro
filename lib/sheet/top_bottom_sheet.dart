@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
@@ -23,14 +25,13 @@ class TopBottomSheet extends BaseSheet {
           left: 0,
           child: Container(color: dSecondaryColor)),
       Positioned(
-        top: 14,
+        top: 64,
         right: 40,
-        child:  imageAsset != null ?Image.asset(
+        child:  imageAsset != null ? Image.asset(
           imageAsset != null ? imageAsset! : "",
-          width: 600,
-          height: 800,
-          fit: BoxFit.scaleDown,
-        ): Container(),
+          width: min(MediaQuery.of(context).size.width/2-50,800), height: 800,fit: BoxFit.contain,
+    )
+        : Container(),
       ),
       Positioned(
           width: 340,
@@ -44,9 +45,8 @@ class TopBottomSheet extends BaseSheet {
         left: 100,
         child:bottomImageAsset != null ?  Image.asset(
           bottomImageAsset != null ? bottomImageAsset! : "",
-          width: 500,
           height: 500,
-          fit: BoxFit.scaleDown,
+          width:min(MediaQuery.of(context).size.width/2-50,500),fit: BoxFit.contain,
         ): Container(),
       ),
     ]));

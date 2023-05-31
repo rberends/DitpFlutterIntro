@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
@@ -20,9 +22,8 @@ class IntroductionSheet extends BaseSheet {
       Positioned(
           top: 74,
           right: 16,
-          width: 800,
-          height: 800,
-          child: Container(child: Image.asset('assets/intro_bubbles.png'))),
+          child: Container(child: Image.asset('assets/intro_bubbles.png',  width: min(MediaQuery.of(context).size.width/1.8-50,800), height: 800,fit: BoxFit.contain,),),
+      ),
       Positioned(
           width: 300,
           height: 500,
