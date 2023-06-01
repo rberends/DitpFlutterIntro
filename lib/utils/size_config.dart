@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/widgets.dart';
 
 class SizeConfig {
@@ -13,15 +15,15 @@ class SizeConfig {
 
   SizeConfig(BuildContext context){
     _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData.size.width;
+    screenWidth = min(_mediaQueryData.size.width, 1400);
     screenHeight = _mediaQueryData.size.height;
-    blockSizeHorizontal = screenWidth!/100;
-    blockSizeVertical = screenHeight!/100;
-    _safeAreaHorizontal = _mediaQueryData!.padding.left +
-        _mediaQueryData!.padding.right;
-    _safeAreaVertical = _mediaQueryData!.padding.top +
-        _mediaQueryData!.padding.bottom;
-    safeBlockHorizontal = (screenWidth! - _safeAreaHorizontal!)/100;
-    safeBlockVertical = (screenHeight! - _safeAreaVertical!)/100;
+    blockSizeHorizontal = screenWidth/100;
+    blockSizeVertical = screenHeight/100;
+    _safeAreaHorizontal = _mediaQueryData.padding.left +
+        _mediaQueryData.padding.right;
+    _safeAreaVertical = _mediaQueryData.padding.top +
+        _mediaQueryData.padding.bottom;
+    safeBlockHorizontal = (screenWidth - _safeAreaHorizontal)/100;
+    safeBlockVertical = (screenHeight - _safeAreaVertical)/100;
   }
 }

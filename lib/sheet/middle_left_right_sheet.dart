@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
+import 'package:ditp_intro_flutter_slide/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class MiddleLeftRightSheet extends BaseSheet {
@@ -17,53 +18,53 @@ class MiddleLeftRightSheet extends BaseSheet {
   @override
   @override
   Widget build(BuildContext context) {
-     int maxWidth=  min(MediaQuery.of(context).size.width, 1400).toInt();
-     double subImageWidth= min(MediaQuery.of(context).size.width / 2-50, 500);
+    double subImageWidth = SizeConfig.blockSizeHorizontal*38;
+    double subImageHeight = SizeConfig.blockSizeVertical*46;
 
     return getDefaultPaddedContainer(Stack(fit: StackFit.expand, children: [
       Positioned(
-        top: 100,
-        left: 40,
+        top: SizeConfig.blockSizeVertical*10,
+        left:  SizeConfig.blockSizeHorizontal*2,
         child: Image.asset(
           imageAsset != null ? imageAsset! : "",
-          width: min(MediaQuery.of(context).size.width / 2 - 50, 400),
-          height: MediaQuery.of(context).size.height/2-150,
+          width: SizeConfig.blockSizeHorizontal*45,
+          height: SizeConfig.blockSizeVertical*38,
           fit: BoxFit.contain,
         ),
       ),
       Positioned(
-          width: 320,
-          height: 500,
-          top: 100,
-          right: 40,
+          width: SizeConfig.blockSizeHorizontal*35,
+          height: SizeConfig.blockSizeVertical*45,
+          top: SizeConfig.blockSizeVertical*10,
+          right: SizeConfig.blockSizeHorizontal*2,
           child: MainTitleDescription(title, description)),
       Positioned(
-          width: min(MediaQuery.of(context).size.width, 1400),
-          height: MediaQuery.of(context).size.height/2-20,
-          top: MediaQuery.of(context).size.height/2,
+          width: SizeConfig.blockSizeHorizontal*99,
+          height: SizeConfig.blockSizeVertical*49,
+          top: SizeConfig.blockSizeVertical*49,
           left: 0,
           child: Container(color: dSecondaryColor)),
       Positioned(
-          top: MediaQuery.of(context).size.height- (MediaQuery.of(context).size.height / 2)+10,
-          left: (maxWidth/2-subImageWidth)-50,
+          top: SizeConfig.blockSizeVertical*50,
+          left: SizeConfig.blockSizeHorizontal*49- subImageWidth,
           child: Container(
               child: leftImageAsset != null
                   ? Image.asset(
                       leftImageAsset != null ? leftImageAsset! : "",
                       width: subImageWidth,
-                      height: MediaQuery.of(context).size.height / 2-50,
+                      height: subImageHeight,
                       fit: BoxFit.scaleDown,
                     )
                   : Container())),
       Positioned(
-          top:  MediaQuery.of(context).size.height- (MediaQuery.of(context).size.height / 2)+10,
-          left:   maxWidth/2-50,
+          top: SizeConfig.blockSizeVertical*50,
+          left: SizeConfig.blockSizeHorizontal*50,
           child: Container(
               child: rightImageAsset != null
                   ? Image.asset(
                       rightImageAsset != null ? rightImageAsset! : "",
                       width: subImageWidth,
-                      height: MediaQuery.of(context).size.height / 2-50,
+                      height: subImageHeight,
                       fit: BoxFit.scaleDown,
                     )
                   : Container())),

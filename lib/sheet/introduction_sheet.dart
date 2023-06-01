@@ -17,27 +17,34 @@ class IntroductionSheet extends BaseSheet {
 
   @override
   Widget build(BuildContext context) {
-    return
-      getDefaultPaddedContainer(Stack(
-        children: [
+    return getDefaultPaddedContainer(Stack(children: [
       Positioned(
-          top: SizeConfig.blockSizeVertical*7,
-          right: SizeConfig.blockSizeHorizontal,
-          child: Container(child: Image.asset('assets/intro_bubbles.png',  width: min(MediaQuery.of(context).size.width/1.8-50,800), height: 800,fit: BoxFit.contain,),),
+        top: SizeConfig.blockSizeVertical * 12,
+        left: SizeConfig.blockSizeHorizontal * 25,
+        child: Container(
+          child: Image.asset(
+            'assets/intro_bubbles.png',
+            width: SizeConfig.blockSizeHorizontal * 65,
+            height: SizeConfig.blockSizeVertical * 85,
+            fit: BoxFit.contain,
+          ),
+        ),
       ),
       Positioned(
-          width: SizeConfig.blockSizeHorizontal*25,
-          height: SizeConfig.blockSizeVertical*100,
-          top: SizeConfig.blockSizeVertical*10,
+          width: SizeConfig.blockSizeHorizontal * 35,
+          height: SizeConfig.blockSizeVertical * 100,
+          top: SizeConfig.blockSizeVertical * 12,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Padding(
-                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical*1),
+                padding: EdgeInsets.symmetric(
+                    vertical: SizeConfig.blockSizeVertical * 1),
                 child: Text(title,
                     style: Theme.of(context).textTheme.displaySmall)),
-            MainTitleDescription(Strings.introTitle, Strings.introDesc)
-           ,Padding(
-                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical*2),
+            MainTitleDescription(Strings.introTitle, Strings.introDesc),
+            Padding(
+                padding: EdgeInsets.symmetric(
+                    vertical: SizeConfig.blockSizeVertical * 2),
                 child: Material(
                   //Wrap with Material
                   shape: RoundedRectangleBorder(
@@ -52,7 +59,8 @@ class IntroductionSheet extends BaseSheet {
                     },
                     child: Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical:  SizeConfig.blockSizeVertical, horizontal: SizeConfig.blockSizeHorizontal),
+                            vertical: SizeConfig.blockSizeVertical,
+                            horizontal: SizeConfig.blockSizeHorizontal),
                         child: Text("Start",
                             style: Theme.of(context).textTheme.displayMedium)),
                   ),

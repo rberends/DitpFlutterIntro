@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/size_config.dart';
+
 class BackgroundClipper extends CustomClipper<Path> {
 
   @override
@@ -7,7 +9,7 @@ class BackgroundClipper extends CustomClipper<Path> {
     var path = Path();
     path.lineTo(0.0, size.height);
     // We subtracted 80 from the height here
-    path.lineTo(size.width, size.height - 40);
+    path.lineTo(size.width, size.height -  SizeConfig.blockSizeVertical*2);
     path.lineTo(size.width, 0.0);
     return path;
   }

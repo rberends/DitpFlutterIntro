@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SizeConfig(context);
     return MaterialApp(
       title: 'Ditp Flutter Introduction',
       theme: ThemeData(
@@ -191,14 +192,14 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height:
-                    defaultTargetPlatform == TargetPlatform.android ? 90 : 80,
+                    defaultTargetPlatform == TargetPlatform.android ?  SizeConfig.blockSizeVertical*7 : SizeConfig.blockSizeVertical*9 ,
                 decoration: const BoxDecoration(color: dSecondaryColor),
               )),
         ),
         Positioned(
-            width: 50,
-            height: 50,
-            top: defaultTargetPlatform == TargetPlatform.android ? 28 : 14,
+            width:  SizeConfig.blockSizeVertical*6,
+            height:  SizeConfig.blockSizeVertical*6,
+            top:  SizeConfig.blockSizeVertical*2,
             left: 16,
             child: InkWell(
                 child: Image.asset('assets/ditp.png'),

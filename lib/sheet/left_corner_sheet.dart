@@ -16,28 +16,27 @@ class LeftCornerSheet extends BaseSheet {
   final String? bottomImageAsset;
 
   @override
-  @override
   Widget build(BuildContext context) {
-    return   getDefaultPaddedContainer(
+    return getDefaultPaddedContainer(
     Stack(
         fit: StackFit.expand,
     children: [
           Positioned(
-              width: min(SizeConfig.blockSizeHorizontal*50, 700),
+              width: SizeConfig.blockSizeHorizontal*50,
               height: SizeConfig.blockSizeVertical*60,
-              top: 90,
+              top: SizeConfig.blockSizeVertical*10,
               left: 0,
               child: Container(color: dSecondaryColor)),
           Positioned(
-              top: 100,
+            top: SizeConfig.blockSizeVertical*10,
               left: 40,
               child:
               Image.asset(imageAsset!=null? imageAsset!: "",
-                width: min(SizeConfig.blockSizeHorizontal*48,550), height: SizeConfig.blockSizeVertical*58,fit: BoxFit.contain,),),
+                width: SizeConfig.blockSizeHorizontal*48, height: SizeConfig.blockSizeVertical*58,fit: BoxFit.contain,),),
           Positioned(
               width: SizeConfig.blockSizeHorizontal*30,
-              height: 1000,
-              top: 100,
+              height: SizeConfig.blockSizeVertical*80,
+              top: SizeConfig.blockSizeVertical*10,
               left: SizeConfig.blockSizeHorizontal*56,
               child:
                 MainTitleDescription(title, description)
@@ -47,8 +46,8 @@ class LeftCornerSheet extends BaseSheet {
             left: MediaQuery.of(context).size.width/9,
             child: Container( child:bottomImageAsset != null? Image.asset(
               bottomImageAsset != null ? bottomImageAsset! : "",
-              width: min(MediaQuery.of(context).size.width/3*2, 1050),
-              height: 300,
+              width: SizeConfig.blockSizeHorizontal*70,
+              height: SizeConfig.blockSizeVertical*30,
               fit: BoxFit.scaleDown,
             ):Container())),
             ]));
