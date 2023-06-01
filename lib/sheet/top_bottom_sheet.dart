@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
+import 'package:ditp_intro_flutter_slide/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class TopBottomSheet extends BaseSheet {
@@ -19,41 +20,43 @@ class TopBottomSheet extends BaseSheet {
   @override
   Widget build(BuildContext context) {
     double topImageWidth = showLargeBottomImage
-        ? min(MediaQuery.of(context).size.width / 3 - 50, 500)
-        : min(MediaQuery.of(context).size.width / 2 - 50, 800);
+        ? SizeConfig.blockSizeHorizontal*26
+        : SizeConfig.blockSizeHorizontal*50;
     double bottomImageWidth = showLargeBottomImage
-        ? min(MediaQuery.of(context).size.width / 1.7 - 50, 800)
-        : min(MediaQuery.of(context).size.width / 2 - 50, 500);
-    double bottomImageHeight = showLargeBottomImage ? 600:500;
+        ? SizeConfig.blockSizeHorizontal*36
+        : SizeConfig.blockSizeHorizontal*70;
+    double bottomImageHeight = showLargeBottomImage ?  SizeConfig.blockSizeVertical*36
+        : SizeConfig.blockSizeVertical*46;
     return getDefaultPaddedContainer(Stack(children: [
       Positioned(
-          width: 1300,
-          height: 680,
-          top: 260,
+          width: SizeConfig.blockSizeHorizontal*90,
+          height: SizeConfig.blockSizeVertical*70,
+          top: SizeConfig.blockSizeVertical*26,
           left: 0,
           child: Container(color: dSecondaryColor)),
       Positioned(
-        top: showLargeBottomImage? 24:54,
-        right: 40,
+        top: showLargeBottomImage?
+        SizeConfig.blockSizeVertical*12:  SizeConfig.blockSizeVertical*14,
+        right: SizeConfig.blockSizeHorizontal*3,
         child: imageAsset != null
             ? Image.asset(
                 imageAsset != null ? imageAsset! : "",
                 width: topImageWidth,
-                height: 800,
+                height: SizeConfig.blockSizeVertical*70,
                 fit: BoxFit.contain,
               )
             : Container(),
       ),
       Positioned(
-          width: 340,
-          height: 500,
-          top: 110,
-          left: 20,
+          width: SizeConfig.blockSizeHorizontal*30,
+          height: SizeConfig.blockSizeVertical*100,
+          top: SizeConfig.blockSizeVertical*10,
+          left: SizeConfig.blockSizeHorizontal*2,
           child: MainTitleDescription(title, description,
               descriptionColor: dSecondaryTextColor)),
       Positioned(
-        top:   MediaQuery.of(context).size.height-bottomImageHeight,
-        left: 60,
+        top:   SizeConfig.screenHeight-bottomImageHeight,
+        left: SizeConfig.blockSizeHorizontal*3,
         child: bottomImageAsset != null
             ? Image.asset(
                 bottomImageAsset != null ? bottomImageAsset! : "",

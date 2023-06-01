@@ -38,7 +38,7 @@ class LeftRightSheet extends BaseSheet {
           ),
           Positioned(
               width:  SizeConfig.blockSizeHorizontal*30,
-              height: SizeConfig.blockSizeVertical*80,
+              height: SizeConfig.blockSizeVertical*100,
               top: SizeConfig.blockSizeVertical*10,
               left:  SizeConfig.blockSizeHorizontal*55,
               child: MainTitleDescription(title, description))

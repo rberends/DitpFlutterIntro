@@ -17,6 +17,7 @@ class LeftCornerSheet extends BaseSheet {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig(context);
     return getDefaultPaddedContainer(
     Stack(
         fit: StackFit.expand,
@@ -35,7 +36,7 @@ class LeftCornerSheet extends BaseSheet {
                 width: SizeConfig.blockSizeHorizontal*48, height: SizeConfig.blockSizeVertical*58,fit: BoxFit.contain,),),
           Positioned(
               width: SizeConfig.blockSizeHorizontal*30,
-              height: SizeConfig.blockSizeVertical*80,
+              height: SizeConfig.blockSizeVertical*100,
               top: SizeConfig.blockSizeVertical*10,
               left: SizeConfig.blockSizeHorizontal*56,
               child:
