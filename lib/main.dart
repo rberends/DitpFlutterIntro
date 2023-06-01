@@ -181,6 +181,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       const TopBottomSheet(Strings.thirteenthTitle,
                           Strings.thirteenthDesc, "assets/second_bubbles.png",
                           bottomImageAsset: "assets/thirteenth_bottom_image.png", showLargeBottomImage: true,),
+                      const TopMiddleSheet(Strings.fourteenthTitle,
+                        Strings.fourteenthDesc, "assets/second_bubbles.png",
+                       ),
+                      const TopMiddleSheet(Strings.fifteenthTitle,
+                        Strings.fifteenthDesc, "assets/second_bubbles.png",
+                      ),
+                      const TopBottomSheet(Strings.sixteenthTitle,
+                        Strings.sixteenthDesc, "assets/second_bubbles.png",
+                        bottomImageAsset: "assets/thirteenth_bottom_image.png"),
+
                     ],
                   )))
         ]),
