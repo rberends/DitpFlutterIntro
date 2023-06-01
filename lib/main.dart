@@ -6,6 +6,7 @@ import 'package:ditp_intro_flutter_slide/sheet/middle_left_right_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/top_middle_sheet.dart';
 import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:ditp_intro_flutter_slide/utils/my_scroll_behavior.dart';
+import 'package:ditp_intro_flutter_slide/utils/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -117,6 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //init size config
+    SizeConfig(context);
+
     final FocusNode focusNode = FocusNode();
 
     return Scaffold(

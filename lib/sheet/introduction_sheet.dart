@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
+import 'package:ditp_intro_flutter_slide/utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -20,23 +21,23 @@ class IntroductionSheet extends BaseSheet {
       getDefaultPaddedContainer(Stack(
         children: [
       Positioned(
-          top: 74,
-          right: 16,
+          top: SizeConfig.blockSizeVertical*7,
+          right: SizeConfig.blockSizeHorizontal,
           child: Container(child: Image.asset('assets/intro_bubbles.png',  width: min(MediaQuery.of(context).size.width/1.8-50,800), height: 800,fit: BoxFit.contain,),),
       ),
       Positioned(
-          width: 300,
-          height: 500,
-          top: 100,
+          width: SizeConfig.blockSizeHorizontal*25,
+          height: SizeConfig.blockSizeVertical*100,
+          top: SizeConfig.blockSizeVertical*10,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
+                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical*1),
                 child: Text(title,
                     style: Theme.of(context).textTheme.displaySmall)),
             MainTitleDescription(Strings.introTitle, Strings.introDesc)
            ,Padding(
-                padding: const EdgeInsets.symmetric(vertical: 24),
+                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical*2),
                 child: Material(
                   //Wrap with Material
                   shape: RoundedRectangleBorder(
@@ -50,8 +51,8 @@ class IntroductionSheet extends BaseSheet {
                       onStart.call();
                     },
                     child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 12.0, horizontal: 24),
+                        padding: EdgeInsets.symmetric(
+                            vertical:  SizeConfig.blockSizeVertical, horizontal: SizeConfig.blockSizeHorizontal),
                         child: Text("Start",
                             style: Theme.of(context).textTheme.displayMedium)),
                   ),

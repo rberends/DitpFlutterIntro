@@ -5,6 +5,8 @@ import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/size_config.dart';
+
 class LeftCornerSheet extends BaseSheet {
   const LeftCornerSheet(this.title, this.description,  this.imageAsset,  {this.bottomImageAsset = null});
 
@@ -21,8 +23,8 @@ class LeftCornerSheet extends BaseSheet {
         fit: StackFit.expand,
     children: [
           Positioned(
-              width: min(MediaQuery.of(context).size.width/2, 700),
-              height: 600,
+              width: min(SizeConfig.blockSizeHorizontal*50, 700),
+              height: SizeConfig.blockSizeVertical*60,
               top: 90,
               left: 0,
               child: Container(color: dSecondaryColor)),
@@ -31,12 +33,12 @@ class LeftCornerSheet extends BaseSheet {
               left: 40,
               child:
               Image.asset(imageAsset!=null? imageAsset!: "",
-                width: min(MediaQuery.of(context).size.width/2-50,550), height: 550,fit: BoxFit.contain,),),
+                width: min(SizeConfig.blockSizeHorizontal*48,550), height: SizeConfig.blockSizeVertical*58,fit: BoxFit.contain,),),
           Positioned(
-              width: 320,
-              height: 500,
+              width: SizeConfig.blockSizeHorizontal*30,
+              height: 1000,
               top: 100,
-              right: 40,
+              left: SizeConfig.blockSizeHorizontal*56,
               child:
                 MainTitleDescription(title, description)
               ),
