@@ -17,38 +17,40 @@ class IntroductionSheet extends BaseSheet {
 
   @override
   Widget build(BuildContext context) {
+    //init size config
+    SizeConfig(context);
     return getDefaultPaddedContainer(Stack(children: [
       Positioned(
-        top: SizeConfig.blockSizeVertical * 12,
-        left: SizeConfig.blockSizeHorizontal * 25,
+        top: SizeConfig.safeBlockVertical * 12,
+        left: SizeConfig.safeBlockHorizontal * 25,
         child: Container(
           child: Image.asset(
             'assets/intro_bubbles.png',
-            width: SizeConfig.blockSizeHorizontal * 65,
-            height: SizeConfig.blockSizeVertical * 85,
+            width: SizeConfig.safeBlockHorizontal * 65,
+            height: SizeConfig.safeBlockVertical * 85,
             fit: BoxFit.contain,
           ),
         ),
       ),
       Positioned(
-          width: SizeConfig.blockSizeHorizontal * 35,
-          height: SizeConfig.blockSizeVertical * 100,
-          top: SizeConfig.blockSizeVertical * 12,
+          width: SizeConfig.safeBlockHorizontal * 35,
+          height: SizeConfig.safeBlockVertical * 100,
+          top: SizeConfig.safeBlockVertical * 12,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Padding(
                 padding: EdgeInsets.symmetric(
-                    vertical: SizeConfig.blockSizeVertical * 1),
+                    vertical: SizeConfig.safeBlockVertical * 1),
                 child: Text(title,
                     style: Theme.of(context).textTheme.displaySmall)),
             MainTitleDescription(Strings.introTitle, Strings.introDesc),
             Padding(
                 padding: EdgeInsets.symmetric(
-                    vertical: SizeConfig.blockSizeVertical * 2),
+                    vertical: SizeConfig.safeBlockVertical * 1),
                 child: Material(
                   //Wrap with Material
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0)),
+                      borderRadius: BorderRadius.circular(22.0)),
                   elevation: 18.0,
                   clipBehavior: Clip.antiAlias, // Add This
                   child: MaterialButton(
@@ -59,8 +61,8 @@ class IntroductionSheet extends BaseSheet {
                     },
                     child: Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: SizeConfig.blockSizeVertical,
-                            horizontal: SizeConfig.blockSizeHorizontal),
+                            vertical: 16,
+                            horizontal: 16),
                         child: Text("Start",
                             style: Theme.of(context).textTheme.displayMedium)),
                   ),

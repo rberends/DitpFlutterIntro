@@ -7,6 +7,7 @@ import 'package:ditp_intro_flutter_slide/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class TopBottomSheet extends BaseSheet {
+
   const TopBottomSheet(this.title, this.description, this.imageAsset,
       {this.bottomImageAsset = null, this.showLargeBottomImage = false});
 
@@ -17,46 +18,49 @@ class TopBottomSheet extends BaseSheet {
   final bool showLargeBottomImage;
 
   @override
-  @override
   Widget build(BuildContext context) {
+
+    //init size config
+    SizeConfig(context);
+
     double topImageWidth = showLargeBottomImage
-        ? SizeConfig.blockSizeHorizontal*26
-        : SizeConfig.blockSizeHorizontal*50;
+        ? SizeConfig.safeBlockHorizontal*26
+        : SizeConfig.safeBlockHorizontal*50;
     double bottomImageWidth = showLargeBottomImage
-        ? SizeConfig.blockSizeHorizontal*36
-        : SizeConfig.blockSizeHorizontal*70;
-    double bottomImageHeight = showLargeBottomImage ?  SizeConfig.blockSizeVertical*36
-        : SizeConfig.blockSizeVertical*46;
+        ? SizeConfig.safeBlockHorizontal*36
+        : SizeConfig.safeBlockHorizontal*70;
+    double bottomImageHeight = showLargeBottomImage ?  SizeConfig.safeBlockVertical*36
+        : SizeConfig.safeBlockVertical*46;
     return getDefaultPaddedContainer(Stack(children: [
       Positioned(
-          width: SizeConfig.blockSizeHorizontal*90,
-          height: SizeConfig.blockSizeVertical*70,
-          top: SizeConfig.blockSizeVertical*26,
+          width: SizeConfig.safeBlockHorizontal*90,
+          height: SizeConfig.safeBlockVertical*70,
+          top: SizeConfig.safeBlockVertical*26,
           left: 0,
           child: Container(color: dSecondaryColor)),
       Positioned(
         top: showLargeBottomImage?
-        SizeConfig.blockSizeVertical*12:  SizeConfig.blockSizeVertical*14,
-        right: SizeConfig.blockSizeHorizontal*3,
+        SizeConfig.safeBlockVertical*12:  SizeConfig.safeBlockVertical*14,
+        right: SizeConfig.safeBlockHorizontal*3,
         child: imageAsset != null
             ? Image.asset(
                 imageAsset != null ? imageAsset! : "",
                 width: topImageWidth,
-                height: SizeConfig.blockSizeVertical*70,
+                height: SizeConfig.safeBlockVertical*70,
                 fit: BoxFit.contain,
               )
             : Container(),
       ),
       Positioned(
-          width: SizeConfig.blockSizeHorizontal*30,
-          height: SizeConfig.blockSizeVertical*100,
-          top: SizeConfig.blockSizeVertical*10,
-          left: SizeConfig.blockSizeHorizontal*2,
+          width: SizeConfig.safeBlockHorizontal*30,
+          height: SizeConfig.safeBlockVertical*100,
+          top: SizeConfig.safeBlockVertical*10,
+          left: SizeConfig.safeBlockHorizontal*2,
           child: MainTitleDescription(title, description,
               descriptionColor: dSecondaryTextColor)),
       Positioned(
         top:   SizeConfig.screenHeight-bottomImageHeight,
-        left: SizeConfig.blockSizeHorizontal*3,
+        left: SizeConfig.safeBlockHorizontal*3,
         child: bottomImageAsset != null
             ? Image.asset(
                 bottomImageAsset != null ? bottomImageAsset! : "",

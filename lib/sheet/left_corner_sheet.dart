@@ -23,32 +23,32 @@ class LeftCornerSheet extends BaseSheet {
         fit: StackFit.expand,
     children: [
           Positioned(
-              width: SizeConfig.blockSizeHorizontal*50,
-              height: SizeConfig.blockSizeVertical*60,
-              top: SizeConfig.blockSizeVertical*10,
+              width: SizeConfig.safeBlockHorizontal*50,
+              height: SizeConfig.safeBlockVertical*60,
+              top: SizeConfig.safeBlockVertical*10,
               left: 0,
               child: Container(color: dSecondaryColor)),
           Positioned(
-            top: SizeConfig.blockSizeVertical*10,
+            top: SizeConfig.safeBlockVertical*10,
               left: 40,
               child:
               Image.asset(imageAsset!=null? imageAsset!: "",
-                width: SizeConfig.blockSizeHorizontal*48, height: SizeConfig.blockSizeVertical*58,fit: BoxFit.contain,),),
+                width: SizeConfig.safeBlockHorizontal*48, height: SizeConfig.safeBlockVertical*58,fit: BoxFit.contain,),),
           Positioned(
-              width: SizeConfig.blockSizeHorizontal*30,
-              height: SizeConfig.blockSizeVertical*100,
-              top: SizeConfig.blockSizeVertical*10,
-              left: SizeConfig.blockSizeHorizontal*56,
+              width: SizeConfig.safeBlockHorizontal*30,
+              height: SizeConfig.safeBlockVertical*100,
+              top: SizeConfig.safeBlockVertical*10,
+              left: SizeConfig.safeBlockHorizontal*56,
               child:
                 MainTitleDescription(title, description)
               ),
           Positioned(
             bottom: 10,
-            left: MediaQuery.of(context).size.width/9,
+            left: SizeConfig.safeBlockHorizontal*10,
             child: Container( child:bottomImageAsset != null? Image.asset(
               bottomImageAsset != null ? bottomImageAsset! : "",
-              width: SizeConfig.blockSizeHorizontal*70,
-              height: SizeConfig.blockSizeVertical*30,
+              width: SizeConfig.safeBlockHorizontal*70,
+              height: SizeConfig.safeBlockVertical*30,
               fit: BoxFit.scaleDown,
             ):Container())),
             ]));

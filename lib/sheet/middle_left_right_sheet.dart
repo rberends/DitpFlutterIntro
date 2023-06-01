@@ -16,37 +16,39 @@ class MiddleLeftRightSheet extends BaseSheet {
   final String? leftImageAsset, rightImageAsset;
 
   @override
-  @override
   Widget build(BuildContext context) {
-    double subImageWidth = SizeConfig.blockSizeHorizontal*38;
-    double subImageHeight = SizeConfig.blockSizeVertical*46;
+    //init size config
+    SizeConfig(context);
+
+    double subImageWidth = SizeConfig.safeBlockHorizontal*38;
+    double subImageHeight = SizeConfig.safeBlockVertical*46;
 
     return getDefaultPaddedContainer(Stack(fit: StackFit.expand, children: [
       Positioned(
-        top: SizeConfig.blockSizeVertical*10,
-        left:  SizeConfig.blockSizeHorizontal*2,
+        top: SizeConfig.safeBlockVertical*10,
+        left:  SizeConfig.safeBlockHorizontal*2,
         child: Image.asset(
           imageAsset != null ? imageAsset! : "",
-          width: SizeConfig.blockSizeHorizontal*45,
-          height: SizeConfig.blockSizeVertical*38,
+          width: SizeConfig.safeBlockHorizontal*45,
+          height: SizeConfig.safeBlockVertical*38,
           fit: BoxFit.contain,
         ),
       ),
       Positioned(
-          width: SizeConfig.blockSizeHorizontal*35,
-          height: SizeConfig.blockSizeVertical*45,
-          top: SizeConfig.blockSizeVertical*10,
-          right: SizeConfig.blockSizeHorizontal*2,
+          width: SizeConfig.safeBlockHorizontal*35,
+          height: SizeConfig.safeBlockVertical*45,
+          top: SizeConfig.safeBlockVertical*10,
+          right: SizeConfig.safeBlockHorizontal*2,
           child: MainTitleDescription(title, description)),
       Positioned(
-          width: SizeConfig.blockSizeHorizontal*99,
-          height: SizeConfig.blockSizeVertical*49,
-          top: SizeConfig.blockSizeVertical*49,
+          width: SizeConfig.safeBlockHorizontal*99,
+          height: SizeConfig.safeBlockVertical*49,
+          top: SizeConfig.safeBlockVertical*49,
           left: 0,
           child: Container(color: dSecondaryColor)),
       Positioned(
-          top: SizeConfig.blockSizeVertical*50,
-          left: SizeConfig.blockSizeHorizontal*49- subImageWidth,
+          top: SizeConfig.safeBlockVertical*50,
+          left: SizeConfig.safeBlockHorizontal*49- subImageWidth,
           child: Container(
               child: leftImageAsset != null
                   ? Image.asset(
@@ -57,8 +59,8 @@ class MiddleLeftRightSheet extends BaseSheet {
                     )
                   : Container())),
       Positioned(
-          top: SizeConfig.blockSizeVertical*50,
-          left: SizeConfig.blockSizeHorizontal*50,
+          top: SizeConfig.safeBlockVertical*50,
+          left: SizeConfig.safeBlockHorizontal*50,
           child: Container(
               child: rightImageAsset != null
                   ? Image.asset(

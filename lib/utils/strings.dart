@@ -48,7 +48,7 @@ class Strings {
   static const String twelfthTitle = "Flutter does\nHello World";
   static const String twelfthDesc = "Lets say hello!";
 
-  static const String thirteenthTitle = "Flutter is Native";
+  static const String thirteenthTitle = "Flutter is \nNative";
   static const String thirteenthDesc = "Flutter compiles to native binaries for each platform - but actually runs on a VM for development. Meaning easier debugging.!";
   static const String thirteenth_1_text = "Flutter compiles to native binaries for each platform - but actually runs on a VM for development. Meaning easier debugging.!";
   static const String thirteenth_2_text = "Flutter compiles to native binaries for each platform - but actually runs on a VM for development. Meaning easier debugging.!";
@@ -60,12 +60,12 @@ class Strings {
   static const String thirteenth_2_desc = "Flutter compiles to native binaries for each platform - but actually runs on a VM for development. Meaning easier debugging.!";
   static const String thirteenth_3_desc = "Flutter compiles to native binaries for each platform - but actually runs on a VM for development. Meaning easier debugging.!";
 
-  static const String fourteenthTitle = "Latest developments";
+  static const String fourteenthTitle = "Latest \ndevelopments";
   static const String fourteenthDesc = "Flutter 3.10: \n Interop with javascript - i.e. run Flutter app alongside/in Angular\nMaterial 3 support\n42% decrease in app size";
 
-  static const String fifteenthTitle = "Can we use it?";
+  static const String fifteenthTitle = "Can we \nuse it?";
   static const String fifteenthDesc = "Ditp might have some use in Flutter for specific use cases. Making companion apps for specific projects for example. Taking a single or few features and packaging them into a convenient little shortcut.";
 
-  static const String sixteenthTitle = "Does it work?";
+  static const String sixteenthTitle = "Does it \nwork?";
   static const String sixteenthDesc = "Yes! This presentation is a website and a Flutter application";
 }

@@ -5,6 +5,8 @@ import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/size_config.dart';
+
 class TopMiddleSheet extends BaseSheet {
   const TopMiddleSheet(this.title, this.description,  this.imageAsset,  {this.bottomImageAsset = null});
   final String title;
@@ -13,31 +15,34 @@ class TopMiddleSheet extends BaseSheet {
   final String? bottomImageAsset;
 
   @override
-  @override
   Widget build(BuildContext context) {
+
+    //init size config
+    SizeConfig(context);
+
     return   getDefaultPaddedContainer(Stack(
         children: [
           Positioned(
-              width: 1300,
-              height: 480,
-              top: 260,
+              width: SizeConfig.safeBlockHorizontal*94,
+              height: SizeConfig.safeBlockVertical*50,
+              top: SizeConfig.safeBlockVertical*28,
               left: 0,
               child: Container(color: dSecondaryColor)),
           Positioned(
-              top: 14,
-              right: 40,
-              child: Image.asset(imageAsset!=null? imageAsset!: "", width: 600, height: 800, fit: BoxFit.scaleDown,),),
+              top:  SizeConfig.safeBlockVertical*14,
+              right: SizeConfig.safeBlockHorizontal*2,
+              child: Image.asset(imageAsset!=null? imageAsset!: "", width: SizeConfig.safeBlockHorizontal*40, height: SizeConfig.safeBlockVertical*60, fit: BoxFit.scaleDown,),),
           Positioned(
-              width: 340,
-              height: 500,
-              top: 110,
-              left: 20,
+              width: SizeConfig.safeBlockHorizontal*44,
+              height: SizeConfig.safeBlockVertical*90,
+              top:  SizeConfig.safeBlockVertical*10,
+              left:  SizeConfig.safeBlockHorizontal*2,
               child:
                 MainTitleDescription(title, description, descriptionColor: dSecondaryTextColor)
               ),
           Positioned(
-              bottom: 10,
-              left: MediaQuery.of(context).size.width/9,
+              bottom: SizeConfig.safeBlockVertical,
+              left: SizeConfig.safeBlockHorizontal*10,
               child: Container( child:bottomImageAsset != null? Image.asset(
                 bottomImageAsset != null ? bottomImageAsset! : "",
                 width: min(MediaQuery.of(context).size.width/3*2, 1050),

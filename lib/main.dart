@@ -209,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width:  SizeConfig.blockSizeVertical*6,
             height:  SizeConfig.blockSizeVertical*6,
             top:  SizeConfig.blockSizeVertical*2,
-            left: 16,
+            left:  defaultTargetPlatform == TargetPlatform.android ?  SizeConfig.blockSizeHorizontal*12 : SizeConfig.blockSizeHorizontal,
             child: InkWell(
                 child: Image.asset('assets/ditp.png'),
                 onTap: () => launchUrlString('https://www.ditp.nl'))),
