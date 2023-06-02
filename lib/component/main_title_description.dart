@@ -1,7 +1,13 @@
+import 'dart:math';
+
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/size_config.dart';
+import 'dart:developer' as developer;
+
+import 'main_description.dart';
+import 'main_title.dart';
 
 class MainTitleDescription extends StatelessWidget {
   const MainTitleDescription(this.title, this.description, {this.titleColor = dSecondaryColor, this.descriptionColor = dSecondaryColor});
@@ -12,24 +18,14 @@ class MainTitleDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    developer.log(' fontSizeFactor:  ${max(SizeConfig.textScaleSize/11, 0.6)}', name: 'my.app.category');
+
     // TODO: implement build
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Padding(
-          padding: const EdgeInsets.symmetric(vertical:24),
-          child: Text(title,
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .displayLarge?.apply(color: titleColor,  fontSizeFactor:  SizeConfig.blockSizeVertical/11))
-        ),
-      Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24),
-          child: Text(
-          description,
-          style: Theme
-                  .of(context)
-                  .textTheme
-                  .displayMedium?.apply(color: descriptionColor,  fontSizeFactor: SizeConfig.blockSizeVertical/9)))
+      MainTitle(title,
+       titleColor: this.titleColor),
+      MainDescription(description,
+          descriptionColor: this.descriptionColor)
     ]);
   }
 }

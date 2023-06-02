@@ -12,6 +12,7 @@ class SizeConfig {
   static late double _safeAreaVertical;
   static late double safeBlockHorizontal;
   static late double safeBlockVertical;
+  static late double textScaleSize;
 
   SizeConfig(BuildContext context){
     _mediaQueryData = MediaQuery.of(context);
@@ -25,5 +26,6 @@ class SizeConfig {
         _mediaQueryData.padding.bottom;
     safeBlockHorizontal = (screenWidth - _safeAreaHorizontal)/100;
     safeBlockVertical = (screenHeight - _safeAreaVertical)/100;
+    textScaleSize = safeBlockVertical<= safeBlockHorizontal? SizeConfig.safeBlockVertical: safeBlockHorizontal;
   }
 }

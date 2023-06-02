@@ -5,6 +5,8 @@ import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../component/main_description.dart';
+import '../component/main_title.dart';
 import '../utils/size_config.dart';
 
 class TopMiddleSheet extends BaseSheet {
@@ -25,7 +27,7 @@ class TopMiddleSheet extends BaseSheet {
           Positioned(
               width: SizeConfig.safeBlockHorizontal*94,
               height: SizeConfig.safeBlockVertical*50,
-              top: SizeConfig.safeBlockVertical*28,
+              top: SizeConfig.safeBlockVertical*25,
               left: 0,
               child: Container(color: dSecondaryColor)),
           Positioned(
@@ -33,13 +35,15 @@ class TopMiddleSheet extends BaseSheet {
               right: SizeConfig.safeBlockHorizontal*2,
               child: Image.asset(imageAsset!=null? imageAsset!: "", width: SizeConfig.safeBlockHorizontal*40, height: SizeConfig.safeBlockVertical*60, fit: BoxFit.scaleDown,),),
           Positioned(
-              width: SizeConfig.safeBlockHorizontal*44,
-              height: SizeConfig.safeBlockVertical*90,
-              top:  SizeConfig.safeBlockVertical*10,
-              left:  SizeConfig.safeBlockHorizontal*2,
-              child:
-                MainTitleDescription(title, description, descriptionColor: dSecondaryTextColor)
-              ),
+              bottom: SizeConfig.safeBlockVertical*75,
+              left: SizeConfig.safeBlockHorizontal*2,
+              child: MainTitle(title)),
+          Positioned(
+              width: SizeConfig.safeBlockHorizontal*40,
+              top: SizeConfig.safeBlockVertical*25,
+              left: SizeConfig.safeBlockHorizontal*2,
+              child: MainDescription(description,
+                  descriptionColor:dSecondaryTextColor)),
           Positioned(
               bottom: SizeConfig.safeBlockVertical,
               left: SizeConfig.safeBlockHorizontal*10,

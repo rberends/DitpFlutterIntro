@@ -1,10 +1,13 @@
 import 'dart:math';
 
+import 'package:ditp_intro_flutter_slide/component/main_description.dart';
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:ditp_intro_flutter_slide/utils/size_config.dart';
 import 'package:flutter/material.dart';
+
+import '../component/main_title.dart';
 
 class TopBottomSheet extends BaseSheet {
 
@@ -25,7 +28,7 @@ class TopBottomSheet extends BaseSheet {
 
     double topImageWidth = showLargeBottomImage
         ? SizeConfig.safeBlockHorizontal*26
-        : SizeConfig.safeBlockHorizontal*50;
+        : SizeConfig.safeBlockHorizontal*40;
     double bottomImageWidth = showLargeBottomImage
         ? SizeConfig.safeBlockHorizontal*36
         : SizeConfig.safeBlockHorizontal*70;
@@ -34,7 +37,7 @@ class TopBottomSheet extends BaseSheet {
     return getDefaultPaddedContainer(Stack(children: [
       Positioned(
           width: SizeConfig.safeBlockHorizontal*90,
-          height: SizeConfig.safeBlockVertical*70,
+          height: SizeConfig.safeBlockVertical*72,
           top: SizeConfig.safeBlockVertical*26,
           left: 0,
           child: Container(color: dSecondaryColor)),
@@ -52,12 +55,15 @@ class TopBottomSheet extends BaseSheet {
             : Container(),
       ),
       Positioned(
-          width: SizeConfig.safeBlockHorizontal*30,
-          height: SizeConfig.safeBlockVertical*100,
-          top: SizeConfig.safeBlockVertical*10,
+          bottom: SizeConfig.safeBlockVertical*74,
           left: SizeConfig.safeBlockHorizontal*2,
-          child: MainTitleDescription(title, description,
-              descriptionColor: dSecondaryTextColor)),
+          child: MainTitle(title)),
+      Positioned(
+          width: SizeConfig.safeBlockHorizontal*40,
+          top: SizeConfig.safeBlockVertical*26,
+          left: SizeConfig.safeBlockHorizontal*2,
+          child: MainDescription(description,
+              descriptionColor:dSecondaryTextColor)),
       Positioned(
         top:   SizeConfig.screenHeight-bottomImageHeight,
         left: SizeConfig.safeBlockHorizontal*3,
