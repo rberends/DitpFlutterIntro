@@ -28,12 +28,12 @@ class TopBottomSheet extends BaseSheet {
 
     double topImageWidth = showLargeBottomImage
         ? SizeConfig.safeBlockHorizontal*26
-        : SizeConfig.safeBlockHorizontal*40;
+        : SizeConfig.safeBlockHorizontal*38;
     double bottomImageWidth = showLargeBottomImage
         ? SizeConfig.safeBlockHorizontal*36
         : SizeConfig.safeBlockHorizontal*70;
     double bottomImageHeight = showLargeBottomImage ?  SizeConfig.safeBlockVertical*36
-        : SizeConfig.safeBlockVertical*46;
+        : SizeConfig.safeBlockVertical*44;
     return getDefaultPaddedContainer(Stack(children: [
       Positioned(
           width: SizeConfig.safeBlockHorizontal*90,
@@ -65,8 +65,8 @@ class TopBottomSheet extends BaseSheet {
           child: MainDescription(description,
               descriptionColor:dSecondaryTextColor)),
       Positioned(
-        top:   SizeConfig.screenHeight-bottomImageHeight,
-        left: SizeConfig.safeBlockHorizontal*3,
+        top:   SizeConfig.screenHeight-bottomImageHeight-SizeConfig.safeBlockVertical*2,
+        left: SizeConfig.safeBlockHorizontal,
         child: bottomImageAsset != null
             ? Image.asset(
                 bottomImageAsset != null ? bottomImageAsset! : "",

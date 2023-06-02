@@ -45,12 +45,12 @@ class TopMiddleSheet extends BaseSheet {
               child: MainDescription(description,
                   descriptionColor:dSecondaryTextColor)),
           Positioned(
-              bottom: SizeConfig.safeBlockVertical,
+              bottom: SizeConfig.safeBlockVertical*10,
               left: SizeConfig.safeBlockHorizontal*10,
               child: Container( child:bottomImageAsset != null? Image.asset(
                 bottomImageAsset != null ? bottomImageAsset! : "",
-                width: min(MediaQuery.of(context).size.width/3*2, 1050),
-                height: 300,
+                width: SizeConfig.safeBlockHorizontal*60,
+                height: SizeConfig.safeBlockVertical*26,
                 fit: BoxFit.scaleDown,
               ):Container())),
         ]));

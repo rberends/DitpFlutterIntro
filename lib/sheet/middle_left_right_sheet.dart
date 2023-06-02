@@ -25,8 +25,8 @@ class MiddleLeftRightSheet extends BaseSheet {
 
     return getDefaultPaddedContainer(Stack(fit: StackFit.expand, children: [
       Positioned(
-        top: SizeConfig.safeBlockVertical*10,
-        left:  SizeConfig.safeBlockHorizontal*2,
+        top: SizeConfig.safeBlockVertical*9,
+        left:  SizeConfig.safeBlockHorizontal*1.5,
         child: Image.asset(
           imageAsset != null ? imageAsset! : "",
           width: SizeConfig.safeBlockHorizontal*45,
@@ -38,7 +38,7 @@ class MiddleLeftRightSheet extends BaseSheet {
           width: SizeConfig.safeBlockHorizontal*35,
           height: SizeConfig.safeBlockVertical*45,
           top: SizeConfig.safeBlockVertical*10,
-          right: SizeConfig.safeBlockHorizontal*2,
+          left: SizeConfig.safeBlockHorizontal*52,
           child: MainTitleDescription(title, description)),
       Positioned(
           width: SizeConfig.safeBlockHorizontal*99,
