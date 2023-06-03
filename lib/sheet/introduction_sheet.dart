@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:ditp_intro_flutter_slide/component/main_title_description.dart';
 import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
@@ -60,9 +58,8 @@ class IntroductionSheet extends BaseSheet {
                       onStart.call();
                     },
                     child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 16,
-                            horizontal: 16),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                         child: Text("Start",
                             style: Theme.of(context).textTheme.displayMedium)),
                   ),

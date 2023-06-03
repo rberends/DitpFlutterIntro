@@ -4,9 +4,10 @@ import 'package:ditp_intro_flutter_slide/utils/constants.dart';
 import 'package:ditp_intro_flutter_slide/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
-class MiddleLeftRightSheet extends BaseSheet {
-  const MiddleLeftRightSheet(this.title, this.description,
-      {this.imageAsset = null,
+class TopLeftRightSheet extends BaseSheet {
+  const TopLeftRightSheet(this.title,
+      {this.description = "",
+      this.imageAsset = null,
       this.leftImageAsset = null,
       this.rightImageAsset = null});
 
@@ -21,7 +22,9 @@ class MiddleLeftRightSheet extends BaseSheet {
     SizeConfig(context);
 
     double subImageWidth = SizeConfig.safeBlockHorizontal * 38;
-    double subImageHeight = SizeConfig.safeBlockVertical * 46;
+    double subImageHeight = SizeConfig.safeBlockVertical * 66;
+
+    bool haveDescription = description.isNotEmpty == true;
 
     return getDefaultPaddedContainer(Stack(fit: StackFit.expand, children: [
       imageAsset != null
@@ -40,16 +43,18 @@ class MiddleLeftRightSheet extends BaseSheet {
           width: SizeConfig.safeBlockHorizontal * 35,
           height: SizeConfig.safeBlockVertical * 45,
           top: SizeConfig.safeBlockVertical * 10,
-          left: SizeConfig.safeBlockHorizontal * 52,
+          left: haveDescription
+              ? SizeConfig.safeBlockHorizontal * 52
+              : SizeConfig.safeBlockHorizontal * 37,
           child: MainTitleDescription(title, description)),
       Positioned(
           width: SizeConfig.safeBlockHorizontal * 99,
           height: SizeConfig.safeBlockVertical * 49,
-          top: SizeConfig.safeBlockVertical * 49,
+          top: SizeConfig.safeBlockVertical * 29,
           left: 0,
           child: Container(color: dSecondaryColor)),
       Positioned(
-          top: SizeConfig.safeBlockVertical * 50,
+          top: SizeConfig.safeBlockVertical * 31,
           left: SizeConfig.safeBlockHorizontal * 49 - subImageWidth,
           child: Container(
               child: leftImageAsset != null
@@ -61,7 +66,7 @@ class MiddleLeftRightSheet extends BaseSheet {
                     )
                   : Container())),
       Positioned(
-          top: SizeConfig.safeBlockVertical * 50,
+          top: SizeConfig.safeBlockVertical * 31,
           left: SizeConfig.safeBlockHorizontal * 50,
           child: Container(
               child: rightImageAsset != null

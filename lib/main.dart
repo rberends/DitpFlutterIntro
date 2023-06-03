@@ -1,8 +1,8 @@
-import 'package:ditp_intro_flutter_slide/sheet/base_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/introduction_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/left_corner_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/left_right_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/middle_left_right_sheet.dart';
+import 'package:ditp_intro_flutter_slide/sheet/top_left_right_sheet.dart';
 import 'package:ditp_intro_flutter_slide/sheet/top_middle_sheet.dart';
 import 'package:ditp_intro_flutter_slide/topbar/background_clipper.dart';
 import 'package:ditp_intro_flutter_slide/utils/my_scroll_behavior.dart';
@@ -10,8 +10,8 @@ import 'package:ditp_intro_flutter_slide/utils/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+
 import 'sheet/top_bottom_sheet.dart';
 import 'utils/constants.dart';
 import 'utils/strings.dart';
@@ -158,15 +158,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           Strings.fourthDesc, "assets/fourth_image.png"),
                       const TopBottomSheet(Strings.fifthTitle,
                           Strings.fifthDesc, "assets/second_bubbles.png",
-                          bottomImageAsset: "assets/companies.png"),
+                          bottomImageAsset: "assets/companies.png",
+                          showLargeBottomImage: true),
                       const LeftCornerSheet(Strings.sixthTitle,
                           Strings.sixthDesc, "assets/second_bubbles.png",
                           bottomImageAsset: "assets/light_apps.png"),
                       const TopMiddleSheet(Strings.seventhTitle,
                           Strings.seventhDesc, "assets/second_bubbles.png",
                           bottomImageAsset: "assets/seventh_bottom_image.png"),
-                      const MiddleLeftRightSheet(Strings.eightTitle,
-                          Strings.eightDesc, "assets/eighth_image.png",
+                      const MiddleLeftRightSheet(
+                          Strings.eightTitle, Strings.eightDesc,
+                          imageAsset: "assets/eighth_image.png",
                           leftImageAsset: "assets/eight_image_sub_left.png",
                           rightImageAsset: "assets/eight_image_sub_right.png"),
                       const LeftRightSheet(Strings.ninthTitle,
@@ -174,23 +176,34 @@ class _MyHomePageState extends State<MyHomePage> {
                       const LeftCornerSheet(Strings.eleventhTitle,
                           Strings.eleventhDesc, "assets/second_bubbles.png",
                           bottomImageAsset: "assets/eleventh_bottom_image.png"),
-                      const TopBottomSheet(Strings.twelfthTitle,
-                        Strings.twelfthDesc, "assets/twelth_secondary_image.png",
-                        bottomImageAsset: "assets/twelth_image.png", showLargeBottomImage: true,),
+                      const TopLeftRightSheet(
+                        Strings.twelfthTitle,
+                        rightImageAsset: "assets/twelth_secondary_image.png",
+                        leftImageAsset: "assets/twelth_image.png",
+                      ),
                       //TODO - add twelth sheet. Needs new class.
-                      const TopBottomSheet(Strings.thirteenthTitle,
-                          Strings.thirteenthDesc, "assets/second_bubbles.png",
-                          bottomImageAsset: "assets/thirteenth_bottom_image.png", showLargeBottomImage: true,),
-                      const TopMiddleSheet(Strings.fourteenthTitle,
-                        Strings.fourteenthDesc, "assets/second_bubbles.png",
-                       ),
-                      const TopMiddleSheet(Strings.fifteenthTitle,
-                        Strings.fifteenthDesc, "assets/second_bubbles.png",
+                      const TopBottomSheet(
+                        Strings.thirteenthTitle,
+                        Strings.thirteenthDesc,
+                        "assets/second_bubbles.png",
+                        bottomImageAsset: "assets/thirteenth_bottom_image.png",
+                        showLargeBottomImage: true,
+                      ),
+                      const TopMiddleSheet(
+                        Strings.fourteenthTitle,
+                        Strings.fourteenthDesc,
+                        "assets/second_bubbles.png",
+                        bottomImageAsset: "assets/fourteenth_image.png",
+                      ),
+                      const LeftRightSheet(
+                        Strings.fifteenthTitle,
+                        Strings.fifteenthDesc,
+                        "assets/fifteenth_image.png",
                       ),
                       const TopBottomSheet(Strings.sixteenthTitle,
-                        Strings.sixteenthDesc, "assets/second_bubbles.png",
-                        bottomImageAsset: "assets/thirteenth_bottom_image.png"),
-
+                          Strings.sixteenthDesc, "assets/second_bubbles.png",
+                          bottomImageAsset:
+                              "assets/thirteenth_bottom_image.png"),
                     ],
                   )))
         ]),
@@ -200,16 +213,19 @@ class _MyHomePageState extends State<MyHomePage> {
               clipper: BackgroundClipper(),
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height:
-                    defaultTargetPlatform == TargetPlatform.android ?  SizeConfig.blockSizeVertical*7 : SizeConfig.blockSizeVertical*9 ,
+                height: defaultTargetPlatform == TargetPlatform.android
+                    ? SizeConfig.blockSizeVertical * 7
+                    : SizeConfig.blockSizeVertical * 9,
                 decoration: const BoxDecoration(color: dSecondaryColor),
               )),
         ),
         Positioned(
-            width:  SizeConfig.blockSizeVertical*6,
-            height:  SizeConfig.blockSizeVertical*6,
-            top:  SizeConfig.blockSizeVertical*2,
-            left:  defaultTargetPlatform == TargetPlatform.android ?  SizeConfig.blockSizeHorizontal*12 : SizeConfig.blockSizeHorizontal,
+            width: SizeConfig.blockSizeVertical * 6,
+            height: SizeConfig.blockSizeVertical * 6,
+            top: SizeConfig.blockSizeVertical * 2,
+            left: defaultTargetPlatform == TargetPlatform.android
+                ? SizeConfig.blockSizeHorizontal * 12
+                : SizeConfig.blockSizeHorizontal,
             child: InkWell(
                 child: Image.asset('assets/ditp.png'),
                 onTap: () => launchUrlString('https://www.ditp.nl'))),

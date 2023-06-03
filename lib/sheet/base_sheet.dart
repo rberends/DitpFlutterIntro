@@ -9,10 +9,15 @@ abstract class BaseSheet extends StatelessWidget {
     return Container(
         child: Align(
             alignment: Alignment.center,
-            widthFactor: defaultTargetPlatform == TargetPlatform.android? 1.0: 0.9,
+            widthFactor:
+                defaultTargetPlatform == TargetPlatform.android ? 1.0 : 0.9,
             child: Padding(
-                padding: EdgeInsetsDirectional.symmetric(
-                    horizontal:defaultTargetPlatform == TargetPlatform.android? kHorizontalMobilePadding: kHorizontalDefaultPadding),
-                child: Container(child: child, constraints: BoxConstraints(maxWidth: 1400)),)));
+              padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: defaultTargetPlatform == TargetPlatform.android
+                      ? kHorizontalMobilePadding
+                      : kHorizontalDefaultPadding),
+              child: Container(
+                  child: child, constraints: BoxConstraints(maxWidth: 1400)),
+            )));
   }
 }
