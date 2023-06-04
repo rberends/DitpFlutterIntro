@@ -15,9 +15,6 @@ class MainDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    developer.log(
-        ' fontSizeFactor:  ${max(SizeConfig.textScaleSize / 11, 0.6)}',
-        name: 'my.app.category');
 
     // TODO: implement build
     return Padding(

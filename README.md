@@ -1,6 +1,12 @@
-# ditp_intro_flutter_slide
+![alt text](http://url/to/img.png)
 
-Introduction Slide for Flutter
+# Ditp (Flutter) Introduction
+
+A Flutter app which presents itself as a slides slideshow. It showcases the functionality of Flutter as well as providing a small introduction to the platform/SDK.
+
+## WARNING: "MY FIRST FLUTTER APP" CODE AHEAD
+
+This project has been made as a trial for Flutter by yours truly. Many best practises have been ignored, in favor of speedy results and learning. Bad code and implementations are thus to be expected.
 
 ## Getting Started
 
