@@ -1,4 +1,4 @@
-![alt text](http://url/to/img.png)
+![alt text](https://raw.githubusercontent.com/rberends/DitpFlutterIntro/main/readme/readme_intro.webp)
 
 # Ditp (Flutter) Introduction
 
@@ -20,3 +20,13 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Opening the Project
+
+I personally mainly used Android Studio to code this together. Cloning/downloading the repo and opening the folder as a project on Android studio should this be sufficient to make it all work. Your mileage with other IDEs may vary and may require further tinkering.
+
+The main entrypoint for this app is in <b>lib/main.dart<b>
+
+## Preview
+
+Check out the preview at [kanditpflutter.nl](https://kanditpflutter.nl).
