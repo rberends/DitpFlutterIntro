@@ -48,10 +48,11 @@ class IntroductionSheet extends BaseSheet {
                 child: Material(
                   //Wrap with Material
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(22.0)),
-                  elevation: 18.0,
+                      borderRadius: BorderRadius.circular(2)),
+                  elevation: 1.0,
                   clipBehavior: Clip.antiAlias, // Add This
                   child: MaterialButton(
+                    elevation: 0,
                     color: dPrimaryColor,
                     textColor: Colors.white,
                     onPressed: () {

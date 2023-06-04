@@ -25,8 +25,8 @@ class LeftCornerSheet extends BaseSheet {
           left: 0,
           child: Container(color: dSecondaryColor)),
       Positioned(
-        top: SizeConfig.safeBlockVertical * 10,
-        left: 40,
+        top: SizeConfig.safeBlockVertical * 11,
+        left: SizeConfig.safeBlockHorizontal * 1.5,
         child: Image.asset(
           imageAsset != null ? imageAsset! : "",
           width: SizeConfig.safeBlockHorizontal * 48,

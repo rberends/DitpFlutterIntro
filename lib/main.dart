@@ -133,6 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onKey: _handleKeyEvent,
                   focusNode: focusNode,
                   child: PageView(
+                    clipBehavior: Clip.antiAlias,
+                    allowImplicitScrolling: true,
                     /// [PageView.scrollDirection] defaults to [Axis.horizontal].
                     /// Use [Axis.vertical] to scroll vertically.
                     controller: controller,
@@ -152,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Strings.secondDesc, "assets/second_bubbles.png",
                           bottomImageAsset: "assets/second_image.png"),
                       const LeftCornerSheet(Strings.thirdTitle,
-                          Strings.thirdDesc, "assets/second_bubbles.png",
+                          Strings.thirdDesc, "assets/white_bubbles.png",
                           bottomImageAsset: "assets/third_image.png"),
                       const TopBottomSheet(Strings.fourthTitle,
                           Strings.fourthDesc, "assets/fourth_image.png"),
@@ -161,10 +163,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           bottomImageAsset: "assets/companies.png",
                           showLargeBottomImage: true),
                       const LeftCornerSheet(Strings.sixthTitle,
-                          Strings.sixthDesc, "assets/second_bubbles.png",
+                          Strings.sixthDesc, "assets/white_bubbles.png",
                           bottomImageAsset: "assets/light_apps.png"),
                       const TopMiddleSheet(Strings.seventhTitle,
-                          Strings.seventhDesc, "assets/second_bubbles.png",
+                          Strings.seventhDesc, "assets/dart_bubbles.png",
                           bottomImageAsset: "assets/seventh_bottom_image.png"),
                       const MiddleLeftRightSheet(
                           Strings.eightTitle, Strings.eightDesc,
@@ -174,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       const LeftRightSheet(Strings.ninthTitle,
                           Strings.ninthDesc, "assets/ninth_image.png"),
                       const LeftCornerSheet(Strings.eleventhTitle,
-                          Strings.eleventhDesc, "assets/second_bubbles.png",
+                          Strings.eleventhDesc, "assets/white_bubbles.png",
                           bottomImageAsset: "assets/eleventh_bottom_image.png"),
                       const TopLeftRightSheet(
                         Strings.twelfthTitle,
@@ -185,14 +187,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       const TopBottomSheet(
                         Strings.thirteenthTitle,
                         Strings.thirteenthDesc,
-                        "assets/second_bubbles.png",
+                        "assets/thirteenth_image.png",
                         bottomImageAsset: "assets/thirteenth_bottom_image.png",
                         showLargeBottomImage: true,
                       ),
                       const TopMiddleSheet(
                         Strings.fourteenthTitle,
                         Strings.fourteenthDesc,
-                        "assets/second_bubbles.png",
+                        "assets/dart_bubbles.png",
                         bottomImageAsset: "assets/fourteenth_image.png",
                       ),
                       const LeftRightSheet(
@@ -201,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         "assets/fifteenth_image.png",
                       ),
                       const TopBottomSheet(Strings.sixteenthTitle,
-                          Strings.sixteenthDesc, "assets/second_bubbles.png",
+                          Strings.sixteenthDesc, "assets/dart_bubbles.png",
                           bottomImageAsset:
                               "assets/thirteenth_bottom_image.png"),
                     ],

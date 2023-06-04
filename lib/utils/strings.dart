@@ -36,7 +36,7 @@ class Strings {
 
   static const String seventhTitle = "Flutter is\nDart";
   static const String seventhDesc =
-      "Written fully in Dart, flutter provides a single programming language to arrange everything. \n\nDart is a statically-typed, garbage-collected, sound nullsafety based programming language.";
+      "Written fully in Dart, flutter provides a single programming language to arrange everything. \n\nDart is a statically-typed, garbage-collected, sound nullsafety based compiling programming language.";
 
   static const String eightTitle = "Yes, Flutter is\nonly Dart";
   static const String eightDesc =
@@ -61,15 +61,22 @@ class Strings {
   static const String thirteenthDesc =
       "Flutter compiles to native binaries for each platform - but actually runs on a VM for development. Meaning easier debugging!";
 
-  static const String fourteenthTitle = "Latest \ndevelopments";
+  static const String fourteenthTitle = "Latest \nDevelopments";
   static const String fourteenthDesc =
-      "Flutter 3.10:\n \n \n-42% decrease in app size \n \n \n-Better interop with javascript - i.e. run Flutter app alongside/in Angular and communicate \n \n \n-Google Material 3 support";
+      "Flutter 3.10:\n \n \n- 42% decrease in app size \n \n \n- Better interop with javascript - i.e. run Flutter app alongside/in Angular and communicate \n \n \n- Google Material 3 support";
 
   static const String fifteenthTitle = "Can we \nuse it?";
   static const String fifteenthDesc =
-      "Ditp might have some use in Flutter for specific use cases. Making companion apps for specific projects for example. Taking a single or few features and packaging them into a convenient little shortcut.";
+      "Ditp might have some immediate use in Flutter for specific use cases. "
+      "\n \nOne example could be companion apps for specific projects, taking a single or multiple features of the main application and packaging them into a convenient little icon on the user's mobile device."
+      "\n \nLong-term, when a new project has a strong multi-platform focus, we could consider building the entire application in Flutter. This would provide an experience that is as native as possible while still having a single code-base."
+      "\n \nI would definitely enjoy a discussion on this topic though.";
+
 
   static const String sixteenthTitle = "Does it \nwork?";
   static const String sixteenthDesc =
-      "Yes! This presentation is a website and a Flutter application";
+      "Yes! This presentation is a website and a Flutter application. It can also compile to a Windows Native .exe and Android app.";
+
+  static const String sixteenth_sub_1 =
+      "You can find the source code here.";
 }
