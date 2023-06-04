@@ -23,7 +23,7 @@ class IntroductionSheet extends BaseSheet {
         left: SizeConfig.safeBlockHorizontal * 25,
         child: Container(
           child: Image.asset(
-            'assets/intro_bubbles.png',
+            'assets/intro_bubbles.webp',
             width: SizeConfig.safeBlockHorizontal * 65,
             height: SizeConfig.safeBlockVertical * 85,
             fit: BoxFit.contain,
