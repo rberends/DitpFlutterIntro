@@ -25,7 +25,7 @@ samples, guidance on mobile development, and a full API reference.
 
 I personally mainly used Android Studio to code this together. Cloning/downloading the repo and opening the folder as a project on Android studio should this be sufficient to make it all work. Your mileage with other IDEs may vary and may require further tinkering.
 
-The main entrypoint for this app is in <b>lib/main.dart</b>
+The main entrypoint for this app is in <b>lib/main.dart</b>.
 
 ## Preview
 
