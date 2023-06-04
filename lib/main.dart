@@ -203,9 +203,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         "assets/fifteenth_image.webp",
                       ),
                       const TopBottomSheet(Strings.sixteenthTitle,
-                          Strings.sixteenthDesc, "assets/dart_bubbles.webp",
+                          Strings.sixteenthDesc, "assets/windows_flutter.webp",
                           bottomImageAsset:
-                              "assets/thirteenth_bottom_image.webp"),
+                              "assets/android_flutter.webp", showLargeBottomImage: true,),
                     ],
                   )))
         ]),

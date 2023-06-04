@@ -75,7 +75,7 @@ class Strings {
 
   static const String sixteenthTitle = "Does it \nwork?";
   static const String sixteenthDesc =
-      "Yes! This presentation is a website and a Flutter application. It can also compile to a Windows Native .exe and Android app.";
+      "Yes! This presentation is a webapp, also a Flutter application. It can also be compiled to both a Native Windows application and Android app. \n \nThe source code can be found at:\nhttps://github.com/rberends/DitpFlutterIntro";
 
   static const String sixteenth_sub_1 =
       "You can find the source code here.";

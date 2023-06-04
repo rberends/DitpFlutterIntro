@@ -39,8 +39,8 @@ class TopBottomSheet extends BaseSheet {
           child: Container(color: dSecondaryColor)),
       Positioned(
         top: showLargeBottomImage
-            ? SizeConfig.safeBlockVertical * 14
-            : SizeConfig.safeBlockVertical * 16,
+            ? SizeConfig.safeBlockVertical * 22
+            : SizeConfig.safeBlockVertical * 24,
         right: SizeConfig.safeBlockHorizontal * 6,
         child: Container(
             child:imageAsset != null
