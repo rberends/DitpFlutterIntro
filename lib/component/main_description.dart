@@ -1,4 +1,3 @@
-import 'dart:developer' as developer;
 import 'dart:math';
 
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
@@ -15,7 +14,6 @@ class MainDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     // TODO: implement build
     return Padding(
         padding: EdgeInsets.symmetric(vertical: SizeConfig.textScaleSize * 2),

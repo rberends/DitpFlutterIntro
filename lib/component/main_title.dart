@@ -1,4 +1,3 @@
-import 'dart:developer' as developer;
 import 'dart:math';
 
 import 'package:ditp_intro_flutter_slide/utils/constants.dart';
@@ -14,10 +13,6 @@ class MainTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    developer.log(
-        ' fontSizeFactor:  ${max(SizeConfig.textScaleSize / 11, 0.6)}',
-        name: 'my.app.category');
-
     // TODO: implement build
     return Container(
         color: Colors.transparent,

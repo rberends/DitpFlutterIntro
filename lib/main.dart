@@ -126,89 +126,128 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         body: Stack(
       children: [
-        Flex(direction: Axis.vertical, children: [
-          Expanded(
-              child: RawKeyboardListener(
-                  autofocus: true,
-                  onKey: _handleKeyEvent,
-                  focusNode: focusNode,
-                  child: PageView(
-                    clipBehavior: Clip.antiAlias,
-                    allowImplicitScrolling: true,
-                    /// [PageView.scrollDirection] defaults to [Axis.horizontal].
-                    /// Use [Axis.vertical] to scroll vertically.
-                    controller: controller,
-                    scrollDirection: Axis.vertical,
-                    scrollBehavior: MyCustomScrollBehavior(),
-                    children: <Widget>[
-                      Center(
-                          child: IntroductionSheet(
-                              onStart: () => {
-                                    controller.animateToPage(
-                                        (controller.page! + 1).toInt(),
-                                        duration:
-                                            const Duration(milliseconds: 300),
-                                        curve: Curves.ease)
-                                  })),
-                      const TopBottomSheet(Strings.secondTitle,
-                          Strings.secondDesc, "assets/second_bubbles.webp",
-                          bottomImageAsset: "assets/second_image.webp"),
-                      const LeftCornerSheet(Strings.thirdTitle,
-                          Strings.thirdDesc, "assets/white_bubbles.webp",
-                          bottomImageAsset: "assets/third_image.webp"),
-                      const TopBottomSheet(Strings.fourthTitle,
-                          Strings.fourthDesc, "assets/fourth_image.webp"),
-                      const TopBottomSheet(Strings.fifthTitle,
-                          Strings.fifthDesc, "assets/second_bubbles.webp",
-                          bottomImageAsset: "assets/companies.webp",
-                          showLargeBottomImage: true),
-                      const LeftCornerSheet(Strings.sixthTitle,
-                          Strings.sixthDesc, "assets/white_bubbles.webp",
-                          bottomImageAsset: "assets/light_apps.webp"),
-                      const TopMiddleSheet(Strings.seventhTitle,
-                          Strings.seventhDesc, "assets/dart_bubbles.webp",
-                          bottomImageAsset: "assets/seventh_bottom_image.webp"),
-                      const MiddleLeftRightSheet(
-                          Strings.eightTitle, Strings.eightDesc,
-                          imageAsset: "assets/eighth_image.webp",
-                          leftImageAsset: "assets/eight_image_sub_left.webp",
-                          rightImageAsset: "assets/eight_image_sub_right.webp"),
-                      const LeftRightSheet(Strings.ninthTitle,
-                          Strings.ninthDesc, "assets/ninth_image.webp"),
-                      const LeftCornerSheet(Strings.eleventhTitle,
-                          Strings.eleventhDesc, "assets/white_bubbles.webp",
-                          bottomImageAsset: "assets/eleventh_bottom_image.webp"),
-                      const TopLeftRightSheet(
-                        Strings.twelfthTitle,
-                        rightImageAsset: "assets/twelth_secondary_image.webp",
-                        leftImageAsset: "assets/twelth_image.webp",
-                      ),
-                      //TODO - add twelth sheet. Needs new class.
-                      const TopBottomSheet(
-                        Strings.thirteenthTitle,
-                        Strings.thirteenthDesc,
-                        "assets/thirteenth_image.webp",
-                        bottomImageAsset: "assets/thirteenth_bottom_image.webp",
-                        showLargeBottomImage: true,
-                      ),
-                      const TopMiddleSheet(
-                        Strings.fourteenthTitle,
-                        Strings.fourteenthDesc,
-                        "assets/dart_bubbles.webp",
-                        bottomImageAsset: "assets/fourteenth_image.webp",
-                      ),
-                      const LeftRightSheet(
-                        Strings.fifteenthTitle,
-                        Strings.fifteenthDesc,
-                        "assets/fifteenth_image.webp",
-                      ),
-                      const TopBottomSheet(Strings.sixteenthTitle,
-                          Strings.sixteenthDesc, "assets/windows_flutter.webp",
-                          bottomImageAsset:
-                              "assets/android_flutter.webp", showLargeBottomImage: true,),
-                    ],
-                  )))
-        ]),
+        TweenAnimationBuilder<double>(
+            tween: Tween<double>(begin: 0.0, end: 1.0),
+            curve: Curves.easeInExpo,
+            duration: const Duration(seconds: 1),
+            builder: (BuildContext context, double opacity, Widget? child) {
+              return Opacity(
+                  opacity: opacity,
+                  child: Flex(direction: Axis.vertical, children: [
+                    Expanded(
+                        child: RawKeyboardListener(
+                            autofocus: true,
+                            onKey: _handleKeyEvent,
+                            focusNode: focusNode,
+                            child: PageView(
+                              clipBehavior: Clip.antiAlias,
+                              allowImplicitScrolling: true,
+
+                              /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+                              /// Use [Axis.vertical] to scroll vertically.
+                              controller: controller,
+                              scrollDirection: Axis.vertical,
+                              scrollBehavior: MyCustomScrollBehavior(),
+                              children: <Widget>[
+                                Center(
+                                    child: IntroductionSheet(
+                                        onStart: () => {
+                                              controller.animateToPage(
+                                                  (controller.page! + 1)
+                                                      .toInt(),
+                                                  duration: const Duration(
+                                                      milliseconds: 300),
+                                                  curve: Curves.ease)
+                                            })),
+                                const TopBottomSheet(
+                                    Strings.secondTitle,
+                                    Strings.secondDesc,
+                                    "assets/second_bubbles.webp",
+                                    bottomImageAsset:
+                                        "assets/second_image.webp"),
+                                const LeftCornerSheet(
+                                    Strings.thirdTitle,
+                                    Strings.thirdDesc,
+                                    "assets/white_bubbles.webp",
+                                    bottomImageAsset:
+                                        "assets/third_image.webp"),
+                                const TopBottomSheet(
+                                    Strings.fourthTitle,
+                                    Strings.fourthDesc,
+                                    "assets/fourth_image.webp"),
+                                const TopBottomSheet(
+                                    Strings.fifthTitle,
+                                    Strings.fifthDesc,
+                                    "assets/second_bubbles.webp",
+                                    bottomImageAsset: "assets/companies.webp",
+                                    showLargeBottomImage: true),
+                                const LeftCornerSheet(
+                                    Strings.sixthTitle,
+                                    Strings.sixthDesc,
+                                    "assets/white_bubbles.webp",
+                                    bottomImageAsset: "assets/light_apps.webp"),
+                                const TopMiddleSheet(
+                                    Strings.seventhTitle,
+                                    Strings.seventhDesc,
+                                    "assets/dart_bubbles.webp",
+                                    bottomImageAsset:
+                                        "assets/seventh_bottom_image.webp"),
+                                const MiddleLeftRightSheet(
+                                    Strings.eightTitle, Strings.eightDesc,
+                                    imageAsset: "assets/eighth_image.webp",
+                                    leftImageAsset:
+                                        "assets/eight_image_sub_left.webp",
+                                    rightImageAsset:
+                                        "assets/eight_image_sub_right.webp"),
+                                const LeftRightSheet(
+                                    Strings.ninthTitle,
+                                    Strings.ninthDesc,
+                                    "assets/ninth_image.webp"),
+                                const LeftCornerSheet(
+                                    Strings.eleventhTitle,
+                                    Strings.eleventhDesc,
+                                    "assets/white_bubbles.webp",
+                                    bottomImageAsset:
+                                        "assets/eleventh_bottom_image.webp"),
+                                const TopLeftRightSheet(
+                                  Strings.twelfthTitle,
+                                  rightImageAsset:
+                                      "assets/twelth_secondary_image.webp",
+                                  leftImageAsset: "assets/twelth_image.webp",
+                                ),
+                                //TODO - add twelth sheet. Needs new class.
+                                const TopBottomSheet(
+                                  Strings.thirteenthTitle,
+                                  Strings.thirteenthDesc,
+                                  "assets/thirteenth_image.webp",
+                                  bottomImageAsset:
+                                      "assets/thirteenth_bottom_image.webp",
+                                  showLargeBottomImage: true,
+                                ),
+                                const TopMiddleSheet(
+                                  Strings.fourteenthTitle,
+                                  Strings.fourteenthDesc,
+                                  "assets/dart_bubbles.webp",
+                                  bottomImageAsset:
+                                      "assets/fourteenth_image.webp",
+                                ),
+                                const LeftRightSheet(
+                                  Strings.fifteenthTitle,
+                                  Strings.fifteenthDesc,
+                                  "assets/fifteenth_image.webp",
+                                ),
+                                const TopBottomSheet(
+                                  Strings.sixteenthTitle,
+                                  Strings.sixteenthDesc,
+                                  "assets/windows_flutter.webp",
+                                  bottomImageAsset:
+                                      "assets/android_flutter.webp",
+                                  showLargeBottomImage: true,
+                                ),
+                              ],
+                            )))
+                  ]));
+            }),
         Positioned(
           top: 0,
           child: ClipPath(

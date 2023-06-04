@@ -1,6 +1,6 @@
 {
-    "name": "ditp_intro_flutter_slide",
-    "short_name": "ditp_intro_flutter_slide",
+    "name": "Ditp Introduction",
+    "short_name": "Ditp Intro",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",

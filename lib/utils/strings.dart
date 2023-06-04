@@ -72,11 +72,9 @@ class Strings {
       "\n \nLong-term, when a new project has a strong multi-platform focus, we could consider building the entire application in Flutter. This would provide an experience that is as native as possible while still having a single code-base."
       "\n \nI would definitely enjoy a discussion on this topic though.";
 
-
   static const String sixteenthTitle = "Does it \nwork?";
   static const String sixteenthDesc =
       "Yes! This presentation is a webapp, also a Flutter application. It can also be compiled to both a Native Windows application and Android app. \n \nThe source code can be found at:\nhttps://github.com/rberends/DitpFlutterIntro";
 
-  static const String sixteenth_sub_1 =
-      "You can find the source code here.";
+  static const String sixteenth_sub_1 = "You can find the source code here.";
 }

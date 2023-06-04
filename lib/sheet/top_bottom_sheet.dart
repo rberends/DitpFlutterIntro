@@ -43,13 +43,13 @@ class TopBottomSheet extends BaseSheet {
             : SizeConfig.safeBlockVertical * 24,
         right: SizeConfig.safeBlockHorizontal * 6,
         child: Container(
-            child:imageAsset != null
-            ? Image.asset(
-                imageAsset != null ? imageAsset! : "",
-                width: topImageWidth,
-                fit: BoxFit.contain,
-              )
-            : Container()),
+            child: imageAsset != null
+                ? Image.asset(
+                    imageAsset != null ? imageAsset! : "",
+                    width: topImageWidth,
+                    fit: BoxFit.contain,
+                  )
+                : Container()),
       ),
       Positioned(
           bottom: SizeConfig.safeBlockVertical * 74,
